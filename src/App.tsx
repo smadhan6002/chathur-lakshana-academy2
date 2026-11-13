@@ -133,6 +133,17 @@ export default function App() {
     navigate('/admin')
   }
 
+  // Safe navigation guard for admin routes
+  useEffect(() => {
+    if (isAuthChecking) return
+
+    if (currentPath === '/admin/dashboard' && !isAuthenticated) {
+      navigate('/admin')
+    } else if (currentPath === '/admin' && isAuthenticated) {
+      navigate('/admin/dashboard')
+    }
+  }, [currentPath, isAuthenticated, isAuthChecking])
+
   // Admin routes — show a clean loading indicator while verifying admin session on page refresh
   if (currentPath === '/admin/dashboard') {
     if (isAuthChecking) {
@@ -165,7 +176,6 @@ export default function App() {
     }
 
     if (!isAuthenticated) {
-      setTimeout(() => navigate('/admin'), 0)
       return null
     }
     return (
@@ -204,7 +214,6 @@ export default function App() {
     }
 
     if (isAuthenticated) {
-      setTimeout(() => navigate('/admin/dashboard'), 0)
       return null
     }
     return (

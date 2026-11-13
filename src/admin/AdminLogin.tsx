@@ -10,14 +10,20 @@ export default function AdminLogin({ onLogin }: { onLogin: () => void }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isLoading) return; // Prevent duplicate concurrent requests
     setIsLoading(true);
     setError('');
 
-    const res = await signInAdmin(email, password);
-    if (res.success) {
-      onLogin();
-    } else {
-      setError(res.error || 'Invalid email or password.');
+    try {
+      const res = await signInAdmin(email, password);
+      if (res.success) {
+        onLogin();
+      } else {
+        setError(res.error || 'Invalid email or password.');
+      }
+    } catch (err: any) {
+      setError(err?.message || 'An unexpected error occurred during authentication.');
+    } finally {
       setIsLoading(false);
     }
   };
@@ -113,7 +119,11 @@ export default function AdminLogin({ onLogin }: { onLogin: () => void }) {
             <input
               type="email"
               required
-              style={inputStyle}
+              disabled={isLoading}
+              style={{
+                ...inputStyle,
+                opacity: isLoading ? 0.6 : 1,
+              }}
               value={email}
               onChange={e => setEmail(e.target.value)}
               onFocus={e => e.currentTarget.style.borderBottomColor = 'var(--color-accent)'}
@@ -125,7 +135,11 @@ export default function AdminLogin({ onLogin }: { onLogin: () => void }) {
             <input
               type="password"
               required
-              style={inputStyle}
+              disabled={isLoading}
+              style={{
+                ...inputStyle,
+                opacity: isLoading ? 0.6 : 1,
+              }}
               value={password}
               onChange={e => setPassword(e.target.value)}
               onFocus={e => e.currentTarget.style.borderBottomColor = 'var(--color-accent)'}
@@ -135,19 +149,20 @@ export default function AdminLogin({ onLogin }: { onLogin: () => void }) {
 
           {error && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: -4 }}
+              animate={{ opacity: 1, y: 0 }}
               style={{
-                color: '#e57373',
+                color: '#ff8a80',
                 fontFamily: "var(--font-body)",
-                fontSize: '13.5px',
+                fontSize: '13px',
                 textAlign: 'center',
                 lineHeight: 1.5,
-                padding: '10px 14px',
-                backgroundColor: 'rgba(229, 115, 115, 0.08)',
-                border: '1px solid rgba(229, 115, 115, 0.3)',
-                borderRadius: '2px',
+                padding: '12px 14px',
+                backgroundColor: 'rgba(255, 138, 128, 0.08)',
+                border: '1px solid rgba(255, 138, 128, 0.3)',
+                borderRadius: '4px',
                 marginTop: '-8px',
+                wordBreak: 'break-word',
               }}
             >
               {error}

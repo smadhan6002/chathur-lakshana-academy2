@@ -148,7 +148,7 @@ export default function AcademySection() {
               <div style={{ overflow: 'hidden', position: 'relative' }}>
                 <motion.img
                   src={academyImage}
-                  alt="Drishti Bhedam — Bharatanatyam dancer abhinaya and eye discipline"
+                  alt="Bharatanatyam dancer abhinaya and classical discipline"
                   initial={{ scale: 1.05 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -160,28 +160,6 @@ export default function AcademySection() {
                     filter: 'contrast(1.06) saturate(0.96)',
                   }}
                 />
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    padding: '24px 20px 16px',
-                    background: 'linear-gradient(to top, rgba(22, 8, 17, 0.95) 0%, rgba(22, 8, 17, 0.6) 60%, transparent 100%)',
-                  }}
-                >
-                  <p style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: 'clamp(14px, 1.8vw, 17px)',
-                    fontStyle: 'italic',
-                    fontWeight: 400,
-                    color: 'var(--accent-gold-light)',
-                    lineHeight: 1.5,
-                    margin: 0,
-                  }}>
-                    "Drishti bhedam — the discipline of the gaze, taught before the feet ever move."
-                  </p>
-                </div>
               </div>
             </div>
           </FadeIn>

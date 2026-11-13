@@ -159,23 +159,94 @@ export default function ContactSection({ onOpenEnquiry }: ContactSectionProps) {
                   Chathur Lakshana Academy of Fine Arts,<br/>Mylapore, Chennai 600004, Tamil Nadu, India
                 </p>
 
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  fontFamily: "var(--font-body)",
-                  fontSize: '11.5px', letterSpacing: '0.22em', fontWeight: 600,
-                  color: 'var(--accent-gold)', textTransform: 'uppercase', marginBottom: '8px',
-                }}>
-                  <Clock size={14} />
-                  <span>CLASS HOURS</span>
+                {/* Special Advanced Classes Information Card */}
+                <div
+                  style={{
+                    backgroundColor: 'rgba(22, 8, 17, 0.85)',
+                    border: '1.5px solid rgba(212, 175, 101, 0.45)',
+                    borderRadius: '3px',
+                    padding: '18px 20px',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 16px rgba(212, 175, 101, 0.05)',
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '11.5px',
+                      letterSpacing: '0.22em',
+                      fontWeight: 700,
+                      color: 'var(--accent-gold)',
+                      textTransform: 'uppercase',
+                      marginBottom: '12px',
+                    }}
+                  >
+                    <Clock size={15} color="var(--accent-gold)" />
+                    <span>SPECIAL ADVANCED CLASSES</span>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '14px' }}>
+                    <div>
+                      <span
+                        style={{
+                          display: 'block',
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '10.5px',
+                          letterSpacing: '0.18em',
+                          color: 'var(--accent-gold-light)',
+                          textTransform: 'uppercase',
+                          marginBottom: '4px',
+                          fontWeight: 600,
+                        }}
+                      >
+                        DAYS
+                      </span>
+                      <p
+                        style={{
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '14.5px',
+                          color: '#FFF4E5',
+                          fontWeight: 500,
+                          lineHeight: 1.4,
+                          margin: 0,
+                        }}
+                      >
+                        Monday, Wednesday &amp; Friday
+                      </p>
+                    </div>
+
+                    <div>
+                      <span
+                        style={{
+                          display: 'block',
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '10.5px',
+                          letterSpacing: '0.18em',
+                          color: 'var(--accent-gold-light)',
+                          textTransform: 'uppercase',
+                          marginBottom: '4px',
+                          fontWeight: 600,
+                        }}
+                      >
+                        TIMING
+                      </span>
+                      <p
+                        style={{
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '15px',
+                          color: 'var(--accent-gold)',
+                          fontWeight: 600,
+                          lineHeight: 1.4,
+                          margin: 0,
+                        }}
+                      >
+                        9:00 AM – 11:00 AM
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <p style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: '16px', color: 'var(--text-primary)', lineHeight: 1.6, margin: 0,
-                }}>
-                  Tuesday – Thursday: 5:00 PM – 8:00 PM<br/>Saturday &amp; Sunday: 8:00 AM – 1:00 PM
-                </p>
               </div>
 
               {/* Contact Information Boxes */}

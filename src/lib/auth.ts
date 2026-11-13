@@ -1,4 +1,4 @@
-import { supabase } from './supabase';
+import { supabase, supabaseUrl } from './supabase';
 import type { User } from '@supabase/supabase-js';
 
 // Server-controlled or environment-configured admin allowlist
@@ -88,6 +88,14 @@ export async function signInAdmin(
       return { success: false, error: 'Please enter your password.' };
     }
 
+    // Distinguish real client offline status from server reachability failure
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      return {
+        success: false,
+        error: 'You appear to be offline. Please check your local internet connection.',
+      };
+    }
+
     const { data, error } = await supabase.auth.signInWithPassword({
       email: cleanEmail,
       password,
@@ -95,24 +103,67 @@ export async function signInAdmin(
 
     if (error) {
       const msg = error.message.toLowerCase();
-      if (msg.includes('invalid login credentials') || msg.includes('invalid credentials')) {
+      const status = error.status || (error as any)?.statusCode;
+
+      // 1. Invalid credentials
+      if (
+        msg.includes('invalid login credentials') ||
+        msg.includes('invalid credentials') ||
+        msg.includes('invalid password') ||
+        msg.includes('invalid email')
+      ) {
         return {
           success: false,
           error: 'Invalid email or password. Please verify your credentials and try again.',
         };
       }
+
+      // 2. Email confirmation needed
       if (msg.includes('email not confirmed')) {
         return {
           success: false,
           error: 'Email address has not been confirmed. Please check your inbox or confirm the email in Supabase Auth.',
         };
       }
-      if (msg.includes('network') || msg.includes('fetch') || msg.includes('connection')) {
+
+      // 3. Rate limiting / Too many attempts
+      if (status === 429 || msg.includes('rate limit') || msg.includes('too many requests')) {
         return {
           success: false,
-          error: 'Network error: Unable to reach the authentication server. Please check your internet connection.',
+          error: 'Too many login attempts. Please wait a few moments before trying again.',
         };
       }
+
+      // 4. Server unreachable / DNS lookup failure / Paused Supabase project
+      if (
+        status === 0 ||
+        error.name === 'AuthRetryableFetchError' ||
+        msg.includes('network') ||
+        msg.includes('fetch') ||
+        msg.includes('connection') ||
+        msg.includes('failed to fetch')
+      ) {
+        let domain = 'Supabase';
+        try {
+          domain = new URL(supabaseUrl).hostname;
+        } catch {
+          domain = supabaseUrl;
+        }
+
+        return {
+          success: false,
+          error: `Unable to reach the Supabase authentication server (${domain}). If this project is on the Supabase Free Tier, it is likely PAUSED due to inactivity. Please restore/unpause the project in your Supabase Dashboard, or verify your VITE_SUPABASE_URL.`,
+        };
+      }
+
+      // 5. Supabase 5xx server errors
+      if (status && status >= 500) {
+        return {
+          success: false,
+          error: `Supabase authentication server returned a temporary error (status ${status}). Please try again shortly.`,
+        };
+      }
+
       return { success: false, error: `Authentication failed: ${error.message}` };
     }
 
@@ -133,10 +184,21 @@ export async function signInAdmin(
 
     return { success: true, user: data.user };
   } catch (err: any) {
-    if (err?.message?.includes('Failed to fetch') || err?.name === 'TypeError') {
+    const errMsg = (err?.message || '').toLowerCase();
+    if (
+      errMsg.includes('failed to fetch') ||
+      errMsg.includes('fetch failed') ||
+      err?.name === 'TypeError'
+    ) {
+      let domain = 'Supabase';
+      try {
+        domain = new URL(supabaseUrl).hostname;
+      } catch {
+        domain = supabaseUrl;
+      }
       return {
         success: false,
-        error: 'Network error: Could not reach Supabase. Please check your network connection and Supabase URL.',
+        error: `Unable to reach the Supabase authentication server (${domain}). If this project is on the Supabase Free Tier, it is likely PAUSED due to inactivity. Please restore/unpause the project in your Supabase Dashboard, or verify your VITE_SUPABASE_URL.`,
       };
     }
     return { success: false, error: err?.message || 'An unexpected error occurred during login.' };

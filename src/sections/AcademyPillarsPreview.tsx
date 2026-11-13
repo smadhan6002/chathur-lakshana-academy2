@@ -105,7 +105,7 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
           >
             <img
               src={academyImage}
-              alt="Drishti Bhedam — Discipline of the gaze"
+              alt="Classical Bharatanatyam discipline"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -113,27 +113,6 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
                 filter: 'contrast(1.06) saturate(0.96)',
               }}
             />
-            <div
-              style={{
-                padding: '16px',
-                background: 'rgba(22, 8, 17, 0.9)',
-                borderTop: '1px solid rgba(212, 175, 101, 0.2)',
-                marginTop: '10px',
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '15px',
-                  fontStyle: 'italic',
-                  color: 'var(--accent-gold-light)',
-                  margin: 0,
-                  lineHeight: 1.45,
-                }}
-              >
-                "Drishti bhedam — the discipline of the gaze, taught before the feet ever move."
-              </p>
-            </div>
           </div>
 
           {/* Right: 4 Pillars Cards */}

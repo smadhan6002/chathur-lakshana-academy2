@@ -286,7 +286,7 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
 
                 <button
                   type="button"
-                  id="bharatanatyam-enquire-btn"
+                  id="bharatanatyam-enrol-btn"
                   onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
@@ -302,7 +302,7 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
                     pointerEvents: 'auto',
                   }}
                 >
-                  ENQUIRE NOW
+                  ENROL NOW
                 </button>
               </div>
             </div>
@@ -406,37 +406,20 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
                       e.stopPropagation()
                       handleEnquire(course.title)
                     }}
+                    className="btn-primary"
                     style={{
                       position: 'relative',
                       zIndex: 20,
                       pointerEvents: 'auto',
-                      background: 'none',
-                      border: 'none',
-                      padding: '4px 0',
-                      fontFamily: "var(--font-body)",
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      letterSpacing: '0.2em',
-                      color: 'var(--accent-gold)',
-                      textTransform: 'uppercase',
+                      width: '100%',
+                      padding: '12px 24px',
+                      fontSize: '12px',
                       cursor: 'pointer',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      transition: 'all 0.25s ease',
                       marginTop: 'auto',
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.color = 'var(--accent-gold-light)'
-                      e.currentTarget.style.letterSpacing = '0.24em'
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.color = 'var(--accent-gold)'
-                      e.currentTarget.style.letterSpacing = '0.2em'
+                      textAlign: 'center',
                     }}
                   >
-                    <span>ENQUIRE FOR {course.title.toUpperCase()}</span>
-                    <span>→</span>
+                    ENROL NOW
                   </button>
                 </div>
               </TiltCard>

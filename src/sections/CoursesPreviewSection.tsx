@@ -225,7 +225,7 @@ export default function CoursesPreviewSection({
                   className="btn-primary"
                   style={{ padding: '14px 36px', fontSize: '13px', cursor: 'pointer' }}
                 >
-                  ENROL IN BHARATANATYAM
+                  ENROL NOW
                 </button>
 
                 <button
@@ -259,8 +259,8 @@ export default function CoursesPreviewSection({
                   Children (Ages 5+), Teens, and Adult Beginners
                 </div>
                 <div>
-                  <strong style={{ color: 'var(--text-primary)', display: 'block' }}>Class Schedule:</strong>
-                  Tue–Thu 5–8 PM &bull; Sat &amp; Sun 8 AM–1 PM
+                  <strong style={{ color: 'var(--accent-gold)', display: 'block' }}>Special Advanced Classes:</strong>
+                  Mon, Wed &amp; Fri &bull; 9:00 AM – 11:00 AM
                 </div>
                 <div>
                   <strong style={{ color: 'var(--text-primary)', display: 'block' }}>Studio Location:</strong>
@@ -346,28 +346,17 @@ export default function CoursesPreviewSection({
               <button
                 type="button"
                 onClick={() => onOpenEnquire(c.title)}
+                className="btn-primary"
                 style={{
-                  background: 'none',
-                  border: 'none',
-                  padding: '6px 0',
-                  fontFamily: 'var(--font-body)',
+                  width: '100%',
+                  padding: '12px 20px',
                   fontSize: '12px',
-                  fontWeight: 600,
-                  letterSpacing: '0.15em',
-                  color: 'var(--accent-gold)',
-                  textTransform: 'uppercase',
                   cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
                   marginTop: 'auto',
-                  transition: 'color 0.25s ease',
+                  textAlign: 'center',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-gold-light)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--accent-gold)')}
               >
-                <span>ENQUIRE FOR {c.title.toUpperCase()}</span>
-                <span>→</span>
+                ENROL NOW
               </button>
             </div>
           ))}

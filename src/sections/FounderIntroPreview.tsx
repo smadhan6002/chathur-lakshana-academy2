@@ -1,5 +1,5 @@
 import { ArrowRight, Sparkles } from 'lucide-react'
-import founderImage from '../assets/jayashree_srinivasann_5d04a935902545048f734fdb8f3b06ab.jpg'
+import founderImage from '../assets/founder.jpeg'
 
 interface FounderIntroPreviewProps {
   onNavigateToFounder: () => void

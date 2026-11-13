@@ -53,7 +53,12 @@ export default function Footer({ onNavigate }: FooterProps) {
               <img
                 src={logoImg}
                 alt="Chathur Lakshana Logo"
-                style={{ height: '42px', width: 'auto', objectFit: 'contain' }}
+                style={{
+                  height: '52px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 2px 8px rgba(212, 175, 101, 0.35))',
+                }}
               />
               <div>
                 <div style={{

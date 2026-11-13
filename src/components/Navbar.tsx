@@ -101,43 +101,48 @@ export default function Navbar({
         <a
           href="/"
           onClick={(e) => handleLinkClick('/', e)}
-          style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}
+          style={{ display: 'flex', alignItems: 'center', gap: 'clamp(12px, 1.5vw, 18px)', textDecoration: 'none' }}
         >
           <img
             src={logoImg}
             alt="Chathur Lakshana Academy Logo"
+            className="navbar-brand-logo"
             style={{
-              height: scrolled ? '46px' : '56px',
+              height: scrolled ? '52px' : '64px',
               width: 'auto',
-              maxHeight: '100%',
+              maxHeight: scrolled ? '52px' : '64px',
               objectFit: 'contain',
               display: 'block',
-              transition: 'height 0.4s ease',
-              filter: 'drop-shadow(0 0 10px rgba(212, 175, 101, 0.35))',
+              transition: 'all 0.4s ease',
+              filter: 'drop-shadow(0 2px 10px rgba(212, 175, 101, 0.45)) drop-shadow(0 0 4px rgba(255, 235, 180, 0.2))',
             }}
           />
           <div>
             <div
+              className="navbar-brand-title"
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '16px',
+                fontSize: 'clamp(14px, 1.6vw, 17.5px)',
                 fontWeight: 600,
                 letterSpacing: '0.15em',
                 color: 'var(--text-primary)',
                 textTransform: 'uppercase',
                 lineHeight: 1.2,
+                whiteSpace: 'nowrap',
               }}
             >
               CHATHUR LAKSHANA
             </div>
             <div
+              className="navbar-brand-subtitle"
               style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '10px',
+                fontSize: 'clamp(9px, 1vw, 10.5px)',
                 fontWeight: 600,
                 letterSpacing: '0.22em',
                 color: 'var(--accent-gold)',
                 textTransform: 'uppercase',
+                whiteSpace: 'nowrap',
               }}
             >
               ACADEMY OF FINE ARTS
@@ -322,6 +327,16 @@ export default function Navbar({
         @media (min-width: 981px) {
           .mobile-menu-btn { display: none !important; }
           .desktop-nav { display: flex !important; }
+        }
+        @media (max-width: 480px) {
+          .navbar-brand-title {
+            font-size: 13.5px !important;
+            letter-spacing: 0.1em !important;
+          }
+          .navbar-brand-subtitle {
+            font-size: 8.5px !important;
+            letter-spacing: 0.16em !important;
+          }
         }
       `}</style>
     </motion.nav>
