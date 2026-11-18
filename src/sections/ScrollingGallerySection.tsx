@@ -103,8 +103,8 @@ export default function ScrollingGallerySection() {
 
   return (
     <section
-      id="moments-of-grace"
-      aria-label="Moments of Grace Infinite Gallery"
+      id="our-visual-diary"
+      aria-label="Our Visual Diary Infinite Gallery"
       style={{
         position: 'relative',
         background: 'linear-gradient(180deg, #160811 0%, #200a1a 50%, #160811 100%)',
@@ -141,49 +141,29 @@ export default function ScrollingGallerySection() {
           zIndex: 1,
         }}
       >
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '10px',
-            padding: '6px 18px',
-            borderRadius: '999px',
-            background: 'rgba(212, 175, 101, 0.08)',
-            border: '1px solid rgba(212, 175, 101, 0.25)',
-            marginBottom: '16px',
-          }}
-        >
-          <span style={{ color: 'var(--accent-gold)', fontSize: '11px', letterSpacing: '0.22em', textTransform: 'uppercase', fontFamily: 'var(--font-body)', fontWeight: 600 }}>
-            Visual Anthology
-          </span>
-        </div>
-
         <h2
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(32px, 4.5vw, 52px)',
+            fontSize: 'clamp(2.8rem, 5.5vw, 5rem)',
             fontWeight: 400,
-            color: 'var(--text-primary)',
+            color: '#F5DDA0',
+            textShadow: '0 0 24px rgba(212, 175, 101, 0.3)',
             letterSpacing: '0.02em',
-            margin: '0 0 14px',
+            margin: '0 0 20px',
             lineHeight: 1.15,
           }}
         >
-          Moments of Grace
+          Our Visual Diary
         </h2>
 
-        <p
+        <div
           style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: 'clamp(14px, 1.8vw, 17px)',
-            color: 'var(--text-secondary)',
-            maxWidth: '640px',
-            margin: '0 auto',
-            lineHeight: 1.6,
+            width: '70px',
+            height: '1.5px',
+            background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
+            margin: '0 auto 18px',
           }}
-        >
-          Celebrating the Beauty of Bharatanatyam — A continuous tapestry of devotional expression, intricate adavus, and sacred stage memories.
-        </p>
+        />
 
         <div
           style={{
@@ -191,7 +171,7 @@ export default function ScrollingGallerySection() {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '8px',
-            marginTop: '18px',
+            marginTop: '14px',
             fontSize: '12px',
             color: 'rgba(212, 175, 101, 0.8)',
             fontFamily: 'var(--font-body)',
@@ -400,7 +380,7 @@ export default function ScrollingGallerySection() {
 
             {/* Bottom Caption / Instructions */}
             <div className="infinite-lightbox-caption" onClick={(e) => e.stopPropagation()}>
-              <p className="caption-title">Chathur Lakshana Moments of Grace</p>
+              <p className="caption-title">Chathur Lakshana — Our Visual Diary</p>
               <p className="caption-sub">
                 Use arrow keys or swipe left/right to navigate &bull; Press Esc to close
               </p>

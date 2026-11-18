@@ -31,11 +31,11 @@ export default function ContactSection({ onOpenEnquiry }: ContactSectionProps) {
 
   const handleOpenCourseEnrolment = () => {
     if (onOpenEnquiry) {
-      onOpenEnquiry('Bharatanatyam', 'Course Enrolment')
+      onOpenEnquiry('Classical Bharatanatyam Training', 'Course Enrolment')
     }
     window.dispatchEvent(
       new CustomEvent('open-enquiry-modal', {
-        detail: { course: 'Bharatanatyam', type: 'Course Enrolment' },
+        detail: { course: 'Classical Bharatanatyam Training', type: 'Course Enrolment' },
       })
     )
   }
@@ -78,7 +78,7 @@ export default function ContactSection({ onOpenEnquiry }: ContactSectionProps) {
               fontSize: 'clamp(2.8rem, 5vw, 4.8rem)', fontWeight: 400,
               color: 'var(--text-primary)', marginBottom: '20px',
               lineHeight: 1.15,
-            }}>Connect with the Academy</h2>
+            }}>Connect with Us</h2>
             <div style={{
               width: '70px', height: '1.5px',
               background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
@@ -89,7 +89,7 @@ export default function ContactSection({ onOpenEnquiry }: ContactSectionProps) {
               fontSize: 'clamp(1.2rem, 2vw, 1.55rem)', fontStyle: 'italic',
               color: 'var(--text-secondary)', lineHeight: 1.6,
             }}>
-              New batches open every quarter for children, youth, and adult disciples in Mylapore, Chennai.
+              New batches open every quarter for children, young adults, and adult disciples in Mylapore, Chennai.
             </p>
           </div>
         </FadeIn>
@@ -362,10 +362,41 @@ export default function ContactSection({ onOpenEnquiry }: ContactSectionProps) {
                 fontSize: '15px',
                 color: 'var(--text-secondary)',
                 lineHeight: 1.7,
-                marginBottom: '28px',
+                marginBottom: '20px',
               }}>
-                Whether you are seeking classical Bharatanatyam training, Carnatic vocal music, choreography theory, or fine arts studio mentorship, our academy provides personalized guidance for beginners to advanced artistes.
+                Our academy offers personalized guidance for beginners to advanced artistes across the following disciplines:
               </p>
+
+              <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '8px',
+                marginBottom: '24px',
+              }}>
+                {[
+                  'Classical Bharatanatyam Training',
+                  'Nattuvangam',
+                  'Dance Theory',
+                  'Choreography',
+                  'Fine Arts Studio Mentorship',
+                ].map((offering) => (
+                  <span
+                    key={offering}
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '12.5px',
+                      fontWeight: 500,
+                      color: 'var(--accent-gold-light)',
+                      backgroundColor: 'rgba(212, 175, 101, 0.1)',
+                      border: '1px solid rgba(212, 175, 101, 0.3)',
+                      padding: '6px 12px',
+                      borderRadius: '2px',
+                    }}
+                  >
+                    ✦ {offering}
+                  </span>
+                ))}
+              </div>
 
               <div style={{
                 backgroundColor: 'rgba(22, 8, 17, 0.6)',

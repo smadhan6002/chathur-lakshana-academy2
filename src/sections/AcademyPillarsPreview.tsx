@@ -1,16 +1,9 @@
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import academyImage from '../img/imp 2.jpeg'
 
 interface AcademyPillarsPreviewProps {
   onNavigateToAcademy: () => void
 }
-
-const pillars = [
-  { name: 'ANGIKAM', title: 'Body & Form', desc: 'Precision of limb, gaze (drishti bhedam), and sculpted physical geometry.' },
-  { name: 'VACHIKAM', title: 'Rhythm & Song', desc: 'Musicality, tala recitation, and deep resonance with the Carnatic sahityam.' },
-  { name: 'AHARYAM', title: 'Aesthetic Lineage', desc: 'Sacred adornment, traditional costume, and reverent stage presentation.' },
-  { name: 'SATVIKAM', title: 'Emotion & Devotion', desc: 'Inner abhinaya, bhava, and spiritual surrender to the divine.' },
-]
 
 export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPillarsPreviewProps) {
   return (
@@ -27,35 +20,17 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)', position: 'relative', zIndex: 1 }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(44px, 7vw, 68px)' }}>
-          <div
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '12px',
-              fontWeight: 600,
-              letterSpacing: '0.25em',
-              color: 'var(--accent-gold)',
-              textTransform: 'uppercase',
-              marginBottom: '16px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-          >
-            <Sparkles size={14} />
-            <span>THE FOUR PILLARS OF CHATHUR LAKSHANA</span>
-          </div>
-
           <h2
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2.5rem, 5vw, 4.4rem)',
+              fontSize: 'clamp(2.6rem, 5.2vw, 4.6rem)',
               fontWeight: 400,
               color: 'var(--text-primary)',
               lineHeight: 1.15,
               marginBottom: '18px',
             }}
           >
-            Four Marks of a Complete Artiste
+            Four Pillars of a Complete Artiste
           </h2>
 
           <div
@@ -81,18 +56,13 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
           </p>
         </div>
 
-        {/* Two Column Preview: Drishti Bhedam image + 4 Pillars Grid */}
+        {/* Centered Framed Academy Photography */}
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: '5fr 7fr',
-            gap: 'clamp(32px, 5vw, 60px)',
-            alignItems: 'center',
-            marginBottom: '40px',
+            maxWidth: '640px',
+            margin: '0 auto 44px',
           }}
-          className="pillars-preview-grid"
         >
-          {/* Left: Drishti Bhedam frame */}
           <div
             style={{
               position: 'relative',
@@ -103,9 +73,14 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
               boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)',
             }}
           >
+            {/* Corner Gold Motifs */}
+            <div style={{ position: 'absolute', top: '-3px', left: '-3px', width: '10px', height: '10px', borderTop: '2px solid var(--accent-gold)', borderLeft: '2px solid var(--accent-gold)' }} />
+            <div style={{ position: 'absolute', top: '-3px', right: '-3px', width: '10px', height: '10px', borderTop: '2px solid var(--accent-gold)', borderRight: '2px solid var(--accent-gold)' }} />
+            <div style={{ position: 'absolute', bottom: '-3px', left: '-3px', width: '10px', height: '10px', borderBottom: '2px solid var(--accent-gold)', borderLeft: '2px solid var(--accent-gold)' }} />
+            <div style={{ position: 'absolute', bottom: '-3px', right: '-3px', width: '10px', height: '10px', borderBottom: '2px solid var(--accent-gold)', borderRight: '2px solid var(--accent-gold)' }} />
             <img
               src={academyImage}
-              alt="Classical Bharatanatyam discipline"
+              alt="Classical Bharatanatyam discipline at Chathur Lakshana Academy"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -113,70 +88,6 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
                 filter: 'contrast(1.06) saturate(0.96)',
               }}
             />
-          </div>
-
-          {/* Right: 4 Pillars Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="four-pillars-cards">
-            {pillars.map((p) => (
-              <div
-                key={p.name}
-                style={{
-                  backgroundColor: '#301326',
-                  border: '1px solid rgba(212, 175, 101, 0.28)',
-                  padding: '24px 20px',
-                  borderRadius: '2px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(212, 175, 101, 0.65)'
-                  e.currentTarget.style.transform = 'translateY(-3px)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(212, 175, 101, 0.28)'
-                  e.currentTarget.style.transform = 'translateY(0)'
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '11px',
-                    fontWeight: 600,
-                    letterSpacing: '0.2em',
-                    color: 'var(--accent-gold)',
-                    textTransform: 'uppercase',
-                    marginBottom: '8px',
-                  }}
-                >
-                  ✦ {p.name}
-                </div>
-
-                <div
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '20px',
-                    color: 'var(--text-primary)',
-                    fontWeight: 500,
-                    marginBottom: '8px',
-                  }}
-                >
-                  {p.title}
-                </div>
-
-                <p
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '13.5px',
-                    color: 'var(--text-secondary)',
-                    lineHeight: 1.6,
-                    margin: 0,
-                  }}
-                >
-                  {p.desc}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
 
@@ -200,15 +111,6 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
           </button>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 900px) {
-          .pillars-preview-grid { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 580px) {
-          .four-pillars-cards { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   )
 }

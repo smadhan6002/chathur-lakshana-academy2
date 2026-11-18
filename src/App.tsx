@@ -42,10 +42,10 @@ export default function App() {
   
   // Unified Enquiry Modal state
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false)
-  const [enquiryCourse, setEnquiryCourse] = useState('Bharatanatyam')
+  const [enquiryCourse, setEnquiryCourse] = useState('Classical Bharatanatyam Training')
   const [enquiryType, setEnquiryType] = useState<EnquiryType>('Course Enrolment')
 
-  const handleOpenEnquiry = (course = 'Bharatanatyam', type: EnquiryType = 'Course Enrolment') => {
+  const handleOpenEnquiry = (course = 'Classical Bharatanatyam Training', type: EnquiryType = 'Course Enrolment') => {
     setEnquiryCourse(course)
     setEnquiryType(type)
     setIsEnquiryOpen(true)
@@ -58,7 +58,7 @@ export default function App() {
   // Global custom event listener for opening enquiry modal
   useEffect(() => {
     const handleEvent = (e: any) => {
-      const course = e.detail?.course || 'Bharatanatyam'
+      const course = e.detail?.course || 'Classical Bharatanatyam Training'
       const type = e.detail?.type || 'Course Enrolment'
       handleOpenEnquiry(course, type)
     }
@@ -302,7 +302,7 @@ export default function App() {
       <Navbar
         currentPath={currentPath}
         onNavigate={navigate}
-        onOpenEnrol={() => handleOpenEnquiry('Bharatanatyam', 'Course Enrolment')}
+        onOpenEnrol={() => handleOpenEnquiry('Classical Bharatanatyam Training', 'Course Enrolment')}
       />
 
       {/* Main Page Content */}

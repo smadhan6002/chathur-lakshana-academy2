@@ -13,7 +13,7 @@ export const NAV_LINKS: NavLinkItem[] = [
   { label: 'FOUNDER', path: '/founder' },
   { label: 'COURSES', path: '/courses' },
   { label: 'GALLERY', path: '/gallery' },
-  { label: 'HONOURS & VOICES', path: '/voices' },
+  { label: 'AWARDS AND ACHIEVEMENTS', path: '/voices' },
   { label: 'CONTACT', path: '/contact' },
 ]
 
@@ -42,7 +42,7 @@ export default function Navbar({
     }
     window.dispatchEvent(
       new CustomEvent('open-enquiry-modal', {
-        detail: { course: 'Bharatanatyam', type: 'Course Enrolment' },
+        detail: { course: 'Classical Bharatanatyam Training', type: 'Course Enrolment' },
       })
     )
   }
@@ -151,7 +151,7 @@ export default function Navbar({
         </a>
 
         {/* Desktop Navigation Links */}
-        <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(14px, 1.8vw, 28px)' }}>
+        <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(10px, 1.3vw, 22px)' }}>
           {NAV_LINKS.map((link) => {
             const isActive = currentPath === link.path
             return (
@@ -165,13 +165,14 @@ export default function Navbar({
                   borderBottom: isActive ? '2px solid var(--accent-gold)' : '2px solid transparent',
                   cursor: 'pointer',
                   fontFamily: 'var(--font-body)',
-                  fontSize: '12px',
+                  fontSize: '11.5px',
                   fontWeight: isActive ? 600 : 500,
-                  letterSpacing: '0.14em',
+                  letterSpacing: '0.11em',
                   color: isActive ? 'var(--accent-gold)' : 'var(--text-secondary)',
                   textTransform: 'uppercase',
                   transition: 'all 0.25s ease',
                   padding: '6px 2px',
+                  whiteSpace: 'nowrap',
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
@@ -320,11 +321,11 @@ export default function Navbar({
       </AnimatePresence>
 
       <style>{`
-        @media (max-width: 980px) {
+        @media (max-width: 1120px) {
           .mobile-menu-btn { display: flex !important; }
           .desktop-nav { display: none !important; }
         }
-        @media (min-width: 981px) {
+        @media (min-width: 1121px) {
           .mobile-menu-btn { display: none !important; }
           .desktop-nav { display: flex !important; }
         }

@@ -1,4 +1,4 @@
-import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 interface CoursesPreviewSectionProps {
   onOpenEnquire: (course: string) => void
@@ -7,33 +7,40 @@ interface CoursesPreviewSectionProps {
 
 const previewCourses = [
   {
-    title: 'Bharatanatyam',
-    badge: 'SIGNATURE DISCIPLINE',
+    title: 'Classical Bharatanatyam Training',
+    badge: 'MYLAPORE STUDIO & ONLINE',
     level: 'Foundational → Arangetram',
-    desc: 'Pure adavus, alarippu to varnam, abhinaya, tala discipline and nattuvangam in the pristine Kalakshetra style.',
-    highlights: ['Weekly Practical & Theory', 'Annual Sabha Performance', 'Arangetram Mentorship'],
+    desc: 'Comprehensive training in the Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. The curriculum spans foundational adavus, the progression from alarippu to a full margam, abhinaya and nattuvangam, with an emphasis on understanding the origins, intent and expressive depth of the form. Students are taught to look go deep into the technique behind every movement, explore the nuances of abhinaya and grow into thoughtful, well-rounded dancers.',
+    highlights: ['Weekly Practical & Theory', 'Arangetram Mentorship'],
     featured: true,
   },
   {
-    title: 'Carnatic Vocal',
-    badge: 'CLASSICAL MUSIC',
-    level: 'Foundational → Advanced',
-    desc: 'Voice culture, sarali varisai through kritis, raga alapana and layam for dancers and vocalists alike.',
-    highlights: ['Voice Culture', 'Tala Training', 'Concert Repertoire'],
+    title: 'Nattuvangam',
+    badge: 'RHYTHM & CONDUCTING',
+    level: 'Intermediate → Advanced',
+    desc: 'Structured training in cymbals (tattukazhi & nattuvangam), sollukattu recitation, tala discipline, and concert accompaniment for classical Bharatanatyam recitals.',
+    highlights: ['Sollukattu Mastery', 'Tala Precision', 'Recital Conducting'],
   },
   {
-    title: 'Choreography & Theory',
+    title: 'Dance Theory',
+    badge: 'CLASSICAL TREATISES',
+    level: 'All Levels',
+    desc: 'Scholarly study of Natya Shastra, Abhinaya Darpana, tala systems, Sanskrit and Tamil sahityam, and the philosophical foundations of Bharatanatyam.',
+    highlights: ['Natya Shastra', 'Abhinaya Darpana', 'Aesthetic Inquiry'],
+  },
+  {
+    title: 'Choreography',
     badge: 'ADVANCED STUDY',
     level: 'Senior Students & Teachers',
-    desc: 'Natya Shastra fundamentals, thematic production design, lighting, stagecraft, and Sanskrit/Tamil aesthetics.',
+    desc: 'Thematic production design, original margam composition, lighting, stagecraft, and ensemble conceptualization grounded in classical grammar.',
     highlights: ['Thematic Composition', 'Stagecraft', 'Production Design'],
   },
   {
-    title: 'Fine Arts Studio',
-    badge: 'VISUAL ARTS',
+    title: 'Fine Arts Studio Mentorship',
+    badge: 'MENTORSHIP & VISUAL ARTS',
     level: 'All Age Groups',
-    desc: 'Traditional temple art, kolam design, and heritage painting as visual companions to classical dance.',
-    highlights: ['Weekend Studio', 'Exhibitions', 'Heritage Workshops'],
+    desc: 'Guided mentorship in traditional fine arts, temple aesthetics, and visual companions that enrich artistic sensibility alongside classical dance.',
+    highlights: ['Individual Guidance', 'Studio Practice', 'Heritage Workshops'],
   },
 ]
 
@@ -69,24 +76,6 @@ export default function CoursesPreviewSection({
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)', position: 'relative', zIndex: 1 }}>
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(44px, 7vw, 68px)' }}>
-          <div
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '12px',
-              fontWeight: 600,
-              letterSpacing: '0.25em',
-              color: 'var(--accent-gold)',
-              textTransform: 'uppercase',
-              marginBottom: '16px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-          >
-            <Sparkles size={14} />
-            <span>DISCOVER OUR OFFERINGS</span>
-          </div>
-
           <h2
             style={{
               fontFamily: 'var(--font-display)',
@@ -121,7 +110,7 @@ export default function CoursesPreviewSection({
               margin: '0 auto',
             }}
           >
-            Rooted, unhurried, and authentic classical training in the heart of Mylapore, Chennai.
+            Bharatanatyam training grounded in a deep understanding of its foundations, and the development of individual expression.
           </p>
         </div>
 
@@ -164,20 +153,20 @@ export default function CoursesPreviewSection({
                   marginBottom: '10px',
                 }}
               >
-                ✦ SIGNATURE PROGRAMME &bull; MYLAPORE STUDIO &amp; ONLINE
+                ✦ MYLAPORE STUDIO &amp; ONLINE
               </div>
 
               <h3
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(2.4rem, 4vw, 3.8rem)',
+                  fontSize: 'clamp(2.2rem, 3.8vw, 3.4rem)',
                   color: '#FFF4E5',
                   margin: '0 0 14px',
                   fontWeight: 400,
                   lineHeight: 1.15,
                 }}
               >
-                Bharatanatyam
+                Classical Bharatanatyam Training
               </h3>
 
               <p
@@ -189,7 +178,7 @@ export default function CoursesPreviewSection({
                   marginBottom: '22px',
                 }}
               >
-                Comprehensive classical training in the renowned Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. Graded years encompassing foundational adavus, alarippu to full margam, expressive abhinaya, and nattuvangam.
+                Comprehensive training in the Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. The curriculum spans foundational adavus, the progression from alarippu to a full margam, abhinaya and nattuvangam, with an emphasis on understanding the origins, intent and expressive depth of the form. Students are taught to look go deep into the technique behind every movement, explore the nuances of abhinaya and grow into thoughtful, well-rounded dancers.
               </p>
 
               <div
@@ -221,7 +210,7 @@ export default function CoursesPreviewSection({
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
                   type="button"
-                  onClick={() => onOpenEnquire('Bharatanatyam')}
+                  onClick={() => onOpenEnquire('Classical Bharatanatyam Training')}
                   className="btn-primary"
                   style={{ padding: '14px 36px', fontSize: '13px', cursor: 'pointer' }}
                 >
@@ -271,11 +260,11 @@ export default function CoursesPreviewSection({
           </div>
         </div>
 
-        {/* Secondary Courses Grid (3 Cards) */}
+        {/* Secondary Courses Grid (4 Cards in 2x2 Layout) */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(2, 1fr)',
             gap: '24px',
             marginBottom: '40px',
           }}

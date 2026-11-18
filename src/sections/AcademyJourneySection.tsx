@@ -1,49 +1,66 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Landmark, Compass, Award, Globe, Users, Info } from 'lucide-react'
+import { Landmark, Flame, Award, Sparkles, Theater, Calendar, Compass } from 'lucide-react'
+import studioEnsembleImg from '../img/imp 1.jpeg'
 
-// Institutional Milestones of Chathur Lakshana Academy of Fine Arts
-// Verified institutional history only — no invented dates; unconfirmed years flagged for client confirmation
+// Chronological Academy Milestones of Chathur Lakshana Academy of Fine Arts
+// Uses only verified project information and client-specified milestones — no invented dates or fabricated details.
 const academyMilestones = [
   {
-    period: 'Founding Inception',
-    yearTag: '[Founding Year to be confirmed by client]',
-    title: 'Establishment in Mylapore, Chennai',
+    step: '01',
+    eraTag: 'Founding Chapter',
+    title: 'Establishment & Early Development of Chathur Lakshana',
     icon: Landmark,
-    category: 'INSTITUTIONAL INCEPTION',
-    desc: 'Chathur Lakshana Academy of Fine Arts was established by Smt. Dr. Radhika Vairavelavan in Mylapore, Chennai — the cultural heartland of South Indian classical arts. Founded to uphold the authentic Kalakshetra lineage and sacred Guru-Shishya parampara, the academy commenced with dedicated batches in foundational Bharatanatyam.',
+    category: 'FOUNDATION',
+    desc: 'Founded by Smt. Dr. Radhika Vairavelavan in Mylapore, Chennai, Chathur Lakshana Academy of Fine Arts was established to uphold the authentic Kalakshetra lineage and the sacred Guru-Shishya parampara, building a strong foundation in classical Bharatanatyam education.',
   },
   {
-    period: 'Curriculum Evolution',
-    yearTag: '[Milestone Year to be confirmed by client]',
-    title: 'Holistic Arts & Knowledge System',
-    icon: Compass,
-    category: 'PEDAGOGICAL EXPANSION',
-    desc: 'Expanding beyond pure movement, the academy formalized its graded curriculum to treat art as a comprehensive knowledge system. Carnatic vocal training, tala recitation, nattuvangam (cymbals), and dance theory based on classical treatises were integrated into student development.',
+    step: '02',
+    eraTag: 'Academy Milestone',
+    title: 'Samarpanam',
+    icon: Flame,
+    category: 'MILESTONE PRESENTATION',
+    desc: 'A cherished milestone in the academy’s journey, Samarpanam marked an offering of artistic devotion and collective student presentation, reflecting the discipline and spirit nurtured at Chathur Lakshana.',
   },
   {
-    period: 'Sabha & Stage Traditions',
-    yearTag: 'Annual Cycle',
-    title: 'Student Stage Productions & Sabha Showcases',
+    step: '03',
+    eraTag: 'Landmark Debut',
+    title: "The Academy's First Arangetram",
     icon: Award,
-    category: 'PERFORMANCE HERITAGE',
-    desc: 'Establishing an unhurried, stage-ready performance ethos, the academy initiated annual student stage presentations across Chennai’s renowned sabhas and temple festivals, giving young learners first-hand exposure to live orchestra, abhinaya, and ensemble discipline.',
+    category: 'FIRST ARANGETRAM',
+    desc: 'A defining chapter in the academy’s pedagogical journey, celebrating the first Arangetram — the formal classical solo debut of a disciple guided through a complete margam in the Kalakshetra tradition.',
   },
   {
-    period: 'Global Outreach',
-    yearTag: 'Contemporary Expansion',
-    title: 'Hybrid & International Classrooms',
-    icon: Globe,
-    category: 'GLOBAL REACH',
-    desc: 'To accommodate eager learners across India and across the globe, the academy developed interactive online and hybrid classrooms. Individualized attention and adherence to Kalakshetra precision remain uncompromised regardless of geographic distance.',
+    step: '04',
+    eraTag: 'Jan 16, 2025',
+    title: 'Panniru Thingalum',
+    icon: Sparkles,
+    category: 'MAJOR PRODUCTION',
+    desc: 'Panniru Thingalum Pazhindridu Vizhakkalum — a major thematic production choreographed and staged for Nada Sudha Trust, celebrating the sacred cycle of traditional temple festivals across the twelve Tamil months.',
   },
   {
-    period: 'Present Day & Future',
-    yearTag: 'Active Academy Era',
-    title: 'Arangetram Guidance & Cultural Stewardship',
-    icon: Users,
-    category: 'CONTINUING MISSION',
-    desc: 'Today, Chathur Lakshana Academy of Fine Arts stands as a nurturing institution training diverse learners — from foundational children’s batches to senior dancers completing their arangetram debuts and performing in major classical productions.',
+    step: '05',
+    eraTag: 'Major Production',
+    title: 'Anbe Jeevadharam',
+    icon: Theater,
+    category: 'MAJOR PRODUCTION',
+    desc: 'A significant thematic dance production presented by Chathur Lakshana Academy of Fine Arts, uniting classical movement vocabulary, nuanced abhinaya, and cohesive ensemble stagecraft.',
+  },
+  {
+    step: '06',
+    eraTag: 'Through the Years',
+    title: 'Performances & Cultural Events',
+    icon: Calendar,
+    category: 'STAGE & CULTURE',
+    desc: 'Across recitals, temple offerings, thematic showcases, and cultural gatherings, the academy has continually created meaningful performance platforms for learners to experience live classical art and stage discipline.',
+  },
+  {
+    step: '07',
+    eraTag: 'Present & Beyond',
+    title: 'Continued Artistic & Educational Development',
+    icon: Compass,
+    category: 'CONTINUING GROWTH',
+    desc: 'Today, Chathur Lakshana continues to grow through both in-person training in Mylapore, Chennai and live interactive online sessions — guiding children, young adults, and adult learners across Classical Bharatanatyam Training, Nattuvangam, Dance Theory, Choreography, and Fine Arts Studio Mentorship.',
   },
 ]
 
@@ -91,118 +108,103 @@ export default function AcademyJourneySection() {
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)', position: 'relative', zIndex: 1 }}>
         {/* Section Header */}
         <FadeIn>
-          <div style={{ textAlign: 'center', marginBottom: 'clamp(50px, 8vw, 80px)' }}>
-            <div
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '12px',
-                fontWeight: 600,
-                letterSpacing: '0.25em',
-                color: 'var(--accent-gold)',
-                textTransform: 'uppercase',
-                marginBottom: '16px',
-              }}
-            >
-              ✧ INSTITUTIONAL EVOLUTION ✧
-            </div>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(48px, 7vw, 72px)' }}>
             <h2
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.8rem, 5.2vw, 5rem)',
+                fontSize: 'clamp(2.8rem, 5.4vw, 5.2rem)',
                 fontWeight: 400,
-                color: 'var(--text-primary)',
+                color: '#F5DDA0',
+                textShadow: '0 0 25px rgba(212, 175, 101, 0.3)',
                 lineHeight: 1.15,
                 marginBottom: '20px',
               }}
             >
-              Our Academy Journey
+              Our Journey Through the Years
             </h2>
             <div
               style={{
                 width: '70px',
                 height: '1.5px',
                 background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
-                margin: '0 auto 24px',
-              }}
-            />
-            <p
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(1.2rem, 2vw, 1.55rem)',
-                fontStyle: 'italic',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.6,
-                maxWidth: '780px',
                 margin: '0 auto',
               }}
-            >
-              The institutional story of Chathur Lakshana Academy of Fine Arts — from its founding in Mylapore to its present-day cultural stewardship.
-            </p>
+            />
           </div>
         </FadeIn>
 
-        {/* Client Confirmation Notice Card */}
+        {/* Featured Editorial Visual Banner */}
         <FadeIn delay={0.1}>
           <div
             style={{
-              maxWidth: '820px',
-              margin: '0 auto 48px',
-              padding: '16px 22px',
-              backgroundColor: 'rgba(48, 19, 38, 0.55)',
-              border: '1px dashed rgba(212, 175, 101, 0.4)',
-              borderRadius: '3px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '14px',
+              maxWidth: '880px',
+              margin: '0 auto clamp(48px, 7vw, 72px)',
+              position: 'relative',
+              backgroundColor: '#301326',
+              padding: '10px',
+              border: '1px solid rgba(212, 175, 101, 0.35)',
+              borderRadius: '2px',
+              boxShadow: '0 20px 55px rgba(0, 0, 0, 0.5)',
             }}
           >
-            <Info size={20} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                color: 'var(--accent-gold-light)',
-                lineHeight: 1.5,
-                margin: 0,
-              }}
-            >
-              <strong>Institutional Verification Note:</strong> Key institutional milestone details are structured below based on verified academy records. Historical dates marked with brackets are awaiting exact client confirmation.
-            </p>
+            <div style={{ position: 'absolute', top: '-3px', left: '-3px', width: '10px', height: '10px', borderTop: '2px solid var(--accent-gold)', borderLeft: '2px solid var(--accent-gold)' }} />
+            <div style={{ position: 'absolute', top: '-3px', right: '-3px', width: '10px', height: '10px', borderTop: '2px solid var(--accent-gold)', borderRight: '2px solid var(--accent-gold)' }} />
+            <div style={{ position: 'absolute', bottom: '-3px', left: '-3px', width: '10px', height: '10px', borderBottom: '2px solid var(--accent-gold)', borderLeft: '2px solid var(--accent-gold)' }} />
+            <div style={{ position: 'absolute', bottom: '-3px', right: '-3px', width: '10px', height: '10px', borderBottom: '2px solid var(--accent-gold)', borderRight: '2px solid var(--accent-gold)' }} />
+            <div style={{ overflow: 'hidden', maxHeight: '380px' }}>
+              <img
+                src={studioEnsembleImg}
+                alt="Chathur Lakshana Academy of Fine Arts ensemble"
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  maxHeight: '380px',
+                  objectFit: 'cover',
+                  objectPosition: 'center 30%',
+                  display: 'block',
+                  filter: 'contrast(1.05) saturate(0.95)',
+                }}
+              />
+            </div>
           </div>
         </FadeIn>
 
-        {/* Timeline Grid */}
-        <div style={{ position: 'relative', maxWidth: '840px', margin: '0 auto', paddingLeft: '44px' }}>
+        {/* Chronological Timeline */}
+        <div
+          className="academy-journey-timeline"
+          style={{ position: 'relative', maxWidth: '880px', margin: '0 auto', paddingLeft: '44px' }}
+        >
           {/* Animated Gold Vertical Spine */}
           <motion.div
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
             style={{
               position: 'absolute',
               left: '10px',
               top: '16px',
               bottom: '16px',
               width: '1.5px',
-              background: 'linear-gradient(to bottom, transparent, var(--accent-gold) 6%, var(--accent-gold) 94%, transparent)',
+              background: 'linear-gradient(to bottom, transparent, var(--accent-gold) 4%, var(--accent-gold) 96%, transparent)',
               transformOrigin: 'top',
               boxShadow: '0 0 10px rgba(212, 175, 101, 0.4)',
             }}
           />
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '36px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {academyMilestones.map((m, idx) => {
               const IconComp = m.icon
               return (
-                <FadeIn key={m.title} delay={0.15 + idx * 0.1}>
+                <FadeIn key={m.title} delay={0.08 + idx * 0.06}>
                   <div style={{ position: 'relative' }}>
                     {/* Gold Node Marker */}
                     <div
                       style={{
                         position: 'absolute',
                         left: '-42px',
-                        top: '24px',
+                        top: '26px',
                         width: '18px',
                         height: '18px',
                         borderRadius: '50%',
@@ -219,14 +221,15 @@ export default function AcademyJourneySection() {
                         backgroundColor: '#301326',
                         border: '1px solid rgba(212, 175, 101, 0.32)',
                         borderRadius: '2px',
-                        padding: 'clamp(24px, 4vw, 36px)',
+                        padding: 'clamp(22px, 3.8vw, 34px)',
                         boxShadow: '0 12px 36px rgba(0, 0, 0, 0.4)',
                         transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
                         position: 'relative',
+                        overflow: 'hidden',
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.transform = 'translateX(6px)'
-                        e.currentTarget.style.borderColor = 'rgba(212, 175, 101, 0.7)'
+                        e.currentTarget.style.borderColor = 'rgba(212, 175, 101, 0.72)'
                         e.currentTarget.style.boxShadow =
                           '0 18px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(212, 175, 101, 0.15)'
                         e.currentTarget.style.backgroundColor = '#38162D'
@@ -238,6 +241,18 @@ export default function AcademyJourneySection() {
                         e.currentTarget.style.backgroundColor = '#301326'
                       }}
                     >
+                      {/* Subtle Gold Left Accent */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: 0,
+                          bottom: 0,
+                          width: '3px',
+                          background: 'linear-gradient(to bottom, var(--accent-gold), transparent)',
+                        }}
+                      />
+
                       <div
                         style={{
                           display: 'flex',
@@ -262,7 +277,9 @@ export default function AcademyJourneySection() {
                           }}
                         >
                           <IconComp size={14} />
-                          <span>{m.category}</span>
+                          <span>
+                            {m.step} &bull; {m.category}
+                          </span>
                         </div>
 
                         <span
@@ -273,18 +290,19 @@ export default function AcademyJourneySection() {
                             letterSpacing: '0.12em',
                             color: 'var(--accent-gold-light)',
                             background: 'rgba(212, 175, 101, 0.12)',
+                            border: '1px solid rgba(212, 175, 101, 0.25)',
                             padding: '3px 10px',
                             borderRadius: '2px',
                           }}
                         >
-                          {m.yearTag}
+                          {m.eraTag}
                         </span>
                       </div>
 
                       <h3
                         style={{
                           fontFamily: 'var(--font-display)',
-                          fontSize: 'clamp(21px, 2.8vw, 26px)',
+                          fontSize: 'clamp(21px, 2.8vw, 27px)',
                           fontWeight: 500,
                           color: 'var(--text-primary)',
                           marginBottom: '10px',
@@ -313,6 +331,14 @@ export default function AcademyJourneySection() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 600px) {
+          .academy-journey-timeline {
+            padding-left: 34px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

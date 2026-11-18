@@ -224,38 +224,29 @@ export default function AchievementsSection() {
                 marginBottom: '16px',
               }}
             >
-              ✧ HONOURS, AWARDS &amp; STUDENT VOICES ✧
+              ✧ AWARDS AND ACHIEVEMENTS ✧
             </div>
             <h2
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.8rem, 5vw, 4.8rem)',
+                fontSize: 'clamp(2.8rem, 5.2vw, 5rem)',
                 fontWeight: 400,
-                color: 'var(--text-primary)',
+                color: '#F5DDA0',
+                textShadow: '0 0 24px rgba(212, 175, 101, 0.3)',
                 marginBottom: '20px',
                 lineHeight: 1.15,
               }}
             >
-              Honours &amp; Authentic Student Voices
+              A Record of Our Achievements
             </h2>
             <div
               style={{
                 width: '70px',
                 height: '1.5px',
                 background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
-                margin: '0 auto 24px',
+                margin: '0 auto',
               }}
             />
-            <p
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(1.2rem, 2vw, 1.55rem)',
-                fontStyle: 'italic',
-                color: 'var(--text-secondary)',
-              }}
-            >
-              A distinguished legacy of artistic mastery, cultural leadership, and authentic disciple reflections.
-            </p>
           </div>
         </FadeIn>
 
@@ -480,44 +471,27 @@ export default function AchievementsSection() {
         {/* Testimonials Header */}
         <FadeIn delay={0.15}>
           <div style={{ textAlign: 'center', marginBottom: 'clamp(40px, 6vw, 56px)' }}>
-            <div
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.22em',
-                color: 'var(--accent-gold)',
-                textTransform: 'uppercase',
-                marginBottom: '10px',
-              }}
-            >
-              ✧ AUTHENTIC STUDENT VOICES ✧
-            </div>
             <h3
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(28px, 4.5vw, 42px)',
+                fontSize: 'clamp(26px, 4vw, 40px)',
                 color: 'var(--text-primary)',
                 fontWeight: 400,
-                lineHeight: 1.2,
-                margin: '0 0 12px',
+                lineHeight: 1.3,
+                maxWidth: '780px',
+                margin: '0 auto 16px',
               }}
             >
-              Learning Beyond the Dance
+              Learning at Chathur Lakshana. Hear from our students about their experience!
             </h3>
-            <p
+            <div
               style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(1.15rem, 1.8vw, 1.4rem)',
-                fontStyle: 'italic',
-                color: 'var(--text-secondary)',
-                maxWidth: '680px',
+                width: '60px',
+                height: '1.5px',
+                background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
                 margin: '0 auto',
-                lineHeight: 1.5,
               }}
-            >
-              Reflections from genuine disciples on the warmth, depth, and transformative pedagogy of Chathur Lakshana.
-            </p>
+            />
           </div>
         </FadeIn>
 

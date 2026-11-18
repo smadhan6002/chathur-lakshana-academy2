@@ -151,7 +151,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             }}>✧ EXPERIENCE</div>
             {[
               { label: 'Event Gallery & Reels', path: '/gallery' },
-              { label: 'Honours & Student Voices', path: '/voices' },
+              { label: 'Awards and Achievements', path: '/voices' },
               { label: 'Contact & Admissions', path: '/contact' },
               { label: 'Admin Portal', path: '/admin' },
             ].map(link => (

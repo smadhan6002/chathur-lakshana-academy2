@@ -4,10 +4,11 @@ import { X, CheckCircle, Sparkles, Send, Loader2, BookOpen, MessageSquare, Alert
 import { submitEnquiry } from '../lib/mediaService'
 
 export const AVAILABLE_COURSES = [
-  'Bharatanatyam',
-  'Carnatic Vocal',
-  'Choreography & Theory',
-  'Fine Arts Studio',
+  'Classical Bharatanatyam Training',
+  'Nattuvangam',
+  'Dance Theory',
+  'Choreography',
+  'Fine Arts Studio Mentorship',
   'General / Multiple Courses',
 ] as const
 
@@ -30,7 +31,7 @@ const ADMIN_WHATSAPP_NUMBER = '919962260779'
 
 export default function EnquiryModal({
   isOpen,
-  initialCourse = 'Bharatanatyam',
+  initialCourse = 'Classical Bharatanatyam Training',
   initialType = 'Course Enrolment',
   onClose,
 }: EnquiryModalProps) {
@@ -58,7 +59,7 @@ export default function EnquiryModal({
       } else if (initialType === 'General Enquiry') {
         setCourse('General / Multiple Courses')
       } else {
-        setCourse('Bharatanatyam')
+        setCourse('Classical Bharatanatyam Training')
       }
       setErrors({})
       setSubmitError('')

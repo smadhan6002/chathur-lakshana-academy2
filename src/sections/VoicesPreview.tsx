@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 interface VoicesPreviewProps {
   onNavigateToVoices: () => void
@@ -18,24 +18,6 @@ export default function VoicesPreview({ onNavigateToVoices }: VoicesPreviewProps
     >
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)', position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: 'clamp(44px, 7vw, 68px)' }}>
-          <div
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '12px',
-              fontWeight: 600,
-              letterSpacing: '0.25em',
-              color: 'var(--accent-gold)',
-              textTransform: 'uppercase',
-              marginBottom: '16px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-          >
-            <Sparkles size={14} />
-            <span>AUTHENTIC EXPERIENCES</span>
-          </div>
-
           <h2
             style={{
               fontFamily: 'var(--font-display)',
@@ -54,22 +36,9 @@ export default function VoicesPreview({ onNavigateToVoices }: VoicesPreviewProps
               width: '70px',
               height: '1.5px',
               background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
-              margin: '0 auto 20px',
-            }}
-          />
-
-          <p
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.2rem, 1.9vw, 1.5rem)',
-              fontStyle: 'italic',
-              color: 'var(--text-secondary)',
-              maxWidth: '680px',
               margin: '0 auto',
             }}
-          >
-            Every composition has a soul. Discover how disciples flourish under Dr. Radhika's mentorship.
-          </p>
+          />
         </div>
 
         {/* 2 Featured Testimonials Preview */}

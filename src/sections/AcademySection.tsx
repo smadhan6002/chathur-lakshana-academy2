@@ -76,26 +76,16 @@ export default function AcademySection() {
         {/* Section Header */}
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: 'clamp(48px, 8vw, 84px)' }}>
-            <div style={{
-              fontFamily: "var(--font-body)",
-              fontSize: 'clamp(11px, 1.4vw, 12.5px)',
-              fontWeight: 600,
-              letterSpacing: '0.25em',
-              color: 'var(--accent-gold)',
-              textTransform: 'uppercase',
-              marginBottom: '18px',
-            }}>
-              ✧ ABOUT THE ACADEMY ✧
-            </div>
             <h2 style={{
               fontFamily: "var(--font-display)",
-              fontSize: 'clamp(2.6rem, 5.2vw, 5rem)',
+              fontSize: 'clamp(3.2rem, 6.2vw, 5.8rem)',
               fontWeight: 400,
-              color: 'var(--text-primary)',
-              lineHeight: 1.15,
+              color: '#F5DDA0',
+              textShadow: '0 0 28px rgba(212, 175, 101, 0.35), 0 4px 16px rgba(0, 0, 0, 0.7)',
+              lineHeight: 1.12,
               marginBottom: '24px',
             }}>
-              A lineage kept alive, one adavu<br />at a time
+              About the Academy
             </h2>
             <div style={{
               width: '70px',

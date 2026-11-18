@@ -262,12 +262,16 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
         ref={sectionRef}
         style={{
           position: 'relative',
-          height: '100vh',
+          minHeight: '100vh',
           width: '100%',
           overflow: 'hidden',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
+          paddingTop: 'clamp(82px, 10vh, 108px)',
+          paddingBottom: 'clamp(16px, 2.5vh, 24px)',
+          boxSizing: 'border-box',
           backgroundColor: '#160811',
         }}
         aria-label="Chathur Lakshana Academy — Cinematic Hero Showcase"
@@ -371,8 +375,13 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
         <div
           style={{
             position: 'relative', zIndex: 12,
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
             textAlign: 'center',
-            padding: 'clamp(90px, 12vh, 120px) clamp(16px, 4vw, 32px) clamp(60px, 8vh, 80px)',
+            padding: 'clamp(12px, 2vh, 24px) clamp(16px, 4vw, 32px) clamp(20px, 3vh, 32px)',
             maxWidth: '1100px', width: '100%', boxSizing: 'border-box',
             transform: `translate3d(${mousePos.x * -0.2}px, ${mousePos.y * -0.2}px, 0)`,
             transition: 'transform 0.15s ease-out',
@@ -384,8 +393,8 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.15 }}
             style={{
-              fontFamily: 'var(--font-display)', fontSize: '26px',
-              color: 'var(--accent-gold)', marginBottom: '14px',
+              fontFamily: 'var(--font-display)', fontSize: '24px',
+              color: 'var(--accent-gold)', marginBottom: 'clamp(8px, 1.4vh, 14px)',
               display: 'inline-block',
               textShadow: '0 0 16px rgba(212,175,101,0.6)',
             }}
@@ -400,18 +409,18 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
             transition={{ duration: 0.8, delay: 0.25 }}
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(10px, 1.3vw, 13px)',
+              fontSize: 'clamp(10px, 1.2vw, 12.5px)',
               fontWeight: 600,
               letterSpacing: 'clamp(0.18em, 0.4vw, 0.3em)',
               color: 'var(--accent-gold-light)',
               textTransform: 'uppercase',
-              marginBottom: '20px',
+              marginBottom: 'clamp(12px, 2vh, 18px)',
             }}
           >
-            TRADITIONAL ARTS ACADEMY · MYLAPORE, CHENNAI
+            ACADEMY OF FINE ARTS · MYLAPORE, CHENNAI
           </motion.div>
 
-          {/* Single-line Heading */}
+          {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -422,20 +431,15 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
               color: '#FFF4E5',
               textShadow: '0 4px 28px rgba(0,0,0,0.8), 0 0 35px rgba(212,175,101,0.25)',
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.45rem, 5.4vw, 4.8rem)',
-              fontWeight: 400, lineHeight: 1.15,
-              whiteSpace: 'nowrap',
-              letterSpacing: 'clamp(0.01em, 0.4vw, 0.04em)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              gap: 'clamp(6px, 1.4vw, 18px)',
-              width: '100%', maxWidth: '100%',
+              fontSize: 'clamp(1.7rem, 3.6vw, 3.7rem)',
+              fontWeight: 400, lineHeight: 1.18,
+              whiteSpace: 'normal',
+              letterSpacing: 'clamp(0.01em, 0.25vw, 0.03em)',
+              textAlign: 'center',
+              width: '100%', maxWidth: '940px',
             }}
           >
-            <span>Art</span>
-            <span style={{ color: 'var(--accent-gold)', opacity: 0.9, fontSize: '0.7em' }}>·</span>
-            <span>Discipline</span>
-            <span style={{ color: 'var(--accent-gold)', opacity: 0.9, fontSize: '0.7em' }}>·</span>
-            <span>Life</span>
+            Advancing Movement Arts Through Education, Practice and Performance
           </motion.h1>
 
           {/* Gold Divider */}
@@ -445,7 +449,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
             transition={{ duration: 1, delay: 0.55 }}
             style={{
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              gap: '12px', margin: '24px auto', width: '180px',
+              gap: '12px', margin: 'clamp(14px, 2.2vh, 22px) auto', width: '180px',
             }}
           >
             <div style={{ flex: 1, height: '1.5px', background: 'linear-gradient(to right, transparent, var(--accent-gold))' }} />
@@ -460,14 +464,13 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
             transition={{ duration: 0.85, delay: 0.7 }}
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.1rem, 2.1vw, 1.65rem)',
+              fontSize: 'clamp(1.05rem, 1.9vw, 1.55rem)',
               fontStyle: 'italic', color: 'var(--text-secondary)',
-              lineHeight: 1.55, maxWidth: '640px', margin: '0 auto',
+              lineHeight: 1.5, maxWidth: '680px', margin: '0 auto',
               textShadow: '0 2px 14px rgba(0,0,0,0.85)',
             }}
           >
-            Rooted in culture. Guided by gurus.<br />
-            Inspiring excellence in every learner.
+            The movement of the body is but an external manifestation of the movement of the soul
           </motion.p>
 
           {/* CTA Buttons */}
@@ -478,7 +481,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
             className="hero-cta-group"
             style={{
               display: 'flex', gap: '16px', justifyContent: 'center',
-              marginTop: '36px', flexWrap: 'wrap',
+              marginTop: 'clamp(20px, 3vh, 32px)', flexWrap: 'wrap',
             }}
           >
             <button
@@ -520,11 +523,12 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
           </motion.div>
         </div>
 
-        {/* ── Sequence indicator (bottom bar) ── */}
+        {/* ── Sequence indicator (bottom bar — in flex flow so it never overlaps CTA buttons) ── */}
         <div
           style={{
-            position: 'absolute', bottom: '24px', left: '50%',
-            transform: 'translateX(-50%)', zIndex: 15,
+            position: 'relative', zIndex: 15,
+            flexShrink: 0,
+            marginTop: '8px',
             display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
             pointerEvents: 'none',
           }}
@@ -578,8 +582,8 @@ export default function HeroSection({ onNavigate }: HeroSectionProps = {}) {
       <style>{`
         @media (max-width: 768px) {
           .hero-single-line-heading {
-            font-size: clamp(1.2rem, 5.2vw, 2.4rem) !important;
-            gap: 6px !important;
+            font-size: clamp(1.55rem, 6vw, 2.5rem) !important;
+            line-height: 1.25 !important;
           }
         }
       `}</style>

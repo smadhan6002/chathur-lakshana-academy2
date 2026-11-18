@@ -146,20 +146,17 @@ export default function ReelsSection() {
       <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: 'clamp(48px, 8vw, 72px)' }}>
-            <div style={{
-              fontFamily: "var(--font-body)",
-              fontSize: '12px', fontWeight: 600, letterSpacing: '0.25em',
-              color: 'var(--accent-gold)', textTransform: 'uppercase', marginBottom: '16px',
-            }}>✧ LATEST FROM OUR ACADEMY ✧</div>
             <h2 style={{
               fontFamily: "var(--font-display)",
-              fontSize: 'clamp(2.8rem, 5vw, 4.6rem)', fontWeight: 400,
-              color: 'var(--text-primary)', marginBottom: '20px',
+              fontSize: 'clamp(3rem, 5.5vw, 5.2rem)', fontWeight: 400,
+              color: '#F5DDA0',
+              textShadow: '0 0 24px rgba(212, 175, 101, 0.3)',
+              marginBottom: '20px',
               lineHeight: 1.15,
-            }}>Reels &amp; Moments</h2>
+            }}>Latest from our Academy</h2>
             <div style={{ width: '70px', height: '1.5px', background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)', margin: '0 auto 24px' }} />
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 'clamp(1.2rem, 2vw, 1.55rem)', fontStyle: 'italic', color: 'var(--text-secondary)' }}>
-              Follow our journey through performances, rehearsals, and special moments.
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 'clamp(1.2rem, 2vw, 1.55rem)', fontStyle: 'italic', color: 'var(--text-secondary)', maxWidth: '720px', margin: '0 auto', lineHeight: 1.6 }}>
+              Follow us and our senior students on Instagram for updates about our upcoming events and performances
             </p>
           </div>
         </FadeIn>

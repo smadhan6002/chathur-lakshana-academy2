@@ -39,17 +39,6 @@ export default function VideoShowcaseSection() {
         transition={{ duration: 0.8 }}
         style={{ textAlign: 'center', marginBottom: 'clamp(36px, 6vw, 54px)', position: 'relative', zIndex: 2 }}
       >
-        <div style={{
-          fontFamily: "var(--font-body)",
-          fontSize: '12px',
-          fontWeight: 600,
-          letterSpacing: '0.25em',
-          color: 'var(--accent-gold)',
-          textTransform: 'uppercase',
-          marginBottom: '16px',
-        }}>
-          ✧ GLIMPSE OF PERFECTION ✧
-        </div>
         <h2 style={{
           fontFamily: "var(--font-display)",
           fontSize: 'clamp(2.5rem, 5vw, 4.2rem)',
@@ -58,7 +47,7 @@ export default function VideoShowcaseSection() {
           fontWeight: 400,
           lineHeight: 1.15,
         }}>
-          Experience the Art
+          Some moments from our performance
         </h2>
         <div style={{
           width: '70px',

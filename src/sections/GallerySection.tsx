@@ -146,17 +146,6 @@ export default function GallerySection() {
       <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)', marginBottom: '60px' }}>
         <FadeIn>
           <div style={{ textAlign: 'center' }}>
-            <div style={{
-              fontFamily: "var(--font-body)",
-              fontSize: '12px',
-              fontWeight: 600,
-              letterSpacing: '0.25em',
-              color: 'var(--accent-gold)',
-              textTransform: 'uppercase',
-              marginBottom: '18px',
-            }}>
-              ✧ EVENT GALLERY ✧
-            </div>
             <h2 style={{
               fontFamily: "var(--font-display)",
               fontSize: 'clamp(2.8rem, 5.5vw, 5rem)',
@@ -165,7 +154,7 @@ export default function GallerySection() {
               marginBottom: '20px',
               lineHeight: 1.15,
             }}>
-              Glimpses of Artistry
+              Event Gallery
             </h2>
             <div style={{
               width: '70px',
@@ -180,7 +169,7 @@ export default function GallerySection() {
               color: 'var(--text-secondary)',
               marginBottom: '44px',
             }}>
-              Photographs from recitals, temple offerings, and arangetrams.
+              A collection of images from our performances, productions and special occasions.
             </p>
 
             {/* Category Filters */}

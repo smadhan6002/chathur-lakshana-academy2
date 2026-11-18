@@ -3,22 +3,28 @@ import { motion, useInView } from 'framer-motion'
 
 const secondaryCourses = [
   {
-    level: 'FOUNDATION → ADVANCED',
-    title: 'Carnatic Vocal',
-    desc: 'Sarali varisai through kritis, raga alapana and layam for dancers and singers alike.',
-    details: 'Voice culture · Tala training · Concert preparation',
+    level: 'INTERMEDIATE → ADVANCED',
+    title: 'Nattuvangam',
+    desc: 'Structured training in cymbals, sollukattu recitation, rhythmic accompaniment, and recital conducting in the Kalakshetra tradition.',
+    details: 'Sollukattu mastery · Tala precision · Recital accompaniment',
+  },
+  {
+    level: 'ALL LEVELS',
+    title: 'Dance Theory',
+    desc: 'In-depth study of Natya Shastra, Abhinaya Darpana, tala architecture, and classical Sanskrit and Tamil sahityam.',
+    details: 'Classical treatises · Sahityam study · Philosophical foundations',
   },
   {
     level: 'SENIOR STUDENTS',
-    title: 'Choreography & Theory',
-    desc: 'Natya Shastra fundamentals, thematic production design and stagecraft.',
-    details: 'Composition · Lighting & costume · Production management',
+    title: 'Choreography',
+    desc: 'Thematic production design, classical composition, stagecraft, and lighting rooted in authentic movement vocabulary.',
+    details: 'Composition · Stagecraft · Production design',
   },
   {
     level: 'ALL AGES',
-    title: 'Fine Arts Studio',
-    desc: 'Kolam, temple art and traditional painting as companions to the performing arts.',
-    details: 'Weekend studio · Exhibitions · Festival installations',
+    title: 'Fine Arts Studio Mentorship',
+    desc: 'Personalized mentorship in traditional fine arts, temple aesthetics, and creative studio practice complementing classical dance.',
+    details: 'Individual mentorship · Studio practice · Heritage workshops',
   },
 ]
 
@@ -146,17 +152,6 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
         {/* Section Header */}
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: 'clamp(50px, 8vw, 84px)' }}>
-            <div style={{
-              fontFamily: "var(--font-body)",
-              fontSize: '12px',
-              fontWeight: 600,
-              letterSpacing: '0.25em',
-              color: 'var(--accent-gold)',
-              textTransform: 'uppercase',
-              marginBottom: '18px',
-            }}>
-              ✧ CLASSICAL CURRICULUM ✧
-            </div>
             <h2 style={{
               fontFamily: "var(--font-display)",
               fontSize: 'clamp(2.8rem, 5.5vw, 5.2rem)',
@@ -172,17 +167,8 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
               width: '70px',
               height: '1.5px',
               background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
-              margin: '0 auto 24px',
+              margin: '0 auto',
             }} />
-            <p style={{
-              fontFamily: "var(--font-display)",
-              fontSize: 'clamp(1.2rem, 2vw, 1.55rem)',
-              fontStyle: 'italic',
-              color: 'var(--text-secondary)',
-              lineHeight: 1.6,
-            }}>
-              Graded, unhurried and rooted — every syllabus ends in performance.
-            </p>
           </div>
         </FadeIn>
 
@@ -218,28 +204,16 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
               />
 
               <div style={{ position: 'relative', zIndex: 1 }}>
-                <div style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  letterSpacing: '0.25em',
-                  color: 'var(--accent-gold)',
-                  textTransform: 'uppercase',
-                  marginBottom: '16px',
-                }}>
-                  ✧ SIGNATURE COURSE ✧
-                </div>
-
                 <h3 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: 'clamp(2.6rem, 4.5vw, 4.2rem)',
+                  fontSize: 'clamp(2.4rem, 4.2vw, 3.8rem)',
                   fontWeight: 400,
                   color: '#FFF4E5',
                   textShadow: '0 0 20px rgba(212, 175, 101, 0.25)',
                   marginBottom: '20px',
                   lineHeight: 1.15,
                 }}>
-                  Bharatanatyam
+                  Classical Bharatanatyam Training
                 </h3>
 
                 <div style={{
@@ -251,13 +225,13 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
 
                 <p style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
+                  fontSize: 'clamp(1rem, 1.5vw, 1.12rem)',
                   color: 'var(--text-secondary)',
-                  lineHeight: 1.7,
-                  maxWidth: '720px',
+                  lineHeight: 1.75,
+                  maxWidth: '780px',
                   margin: '0 auto 32px',
                 }}>
-                  Adavus, alarippu to varnam, abhinaya and nattuvangam, taught in graded years.
+                  Comprehensive training in the Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. The curriculum spans foundational adavus, the progression from alarippu to a full margam, abhinaya and nattuvangam, with an emphasis on understanding the origins, intent and expressive depth of the form. Students are taught to look go deep into the technique behind every movement, explore the nuances of abhinaya and grow into thoughtful, well-rounded dancers.
                 </p>
 
                 {/* Highlights Strip */}
@@ -279,8 +253,6 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
                 >
                   <span style={{ whiteSpace: 'nowrap', fontWeight: 500 }}>Weekly Practical + Theory</span>
                   <span className="bullet-point" style={{ color: 'var(--accent-gold)' }}>✧</span>
-                  <span style={{ whiteSpace: 'nowrap', fontWeight: 500 }}>Annual Sabha Performance</span>
-                  <span className="bullet-point" style={{ color: 'var(--accent-gold)' }}>✧</span>
                   <span style={{ whiteSpace: 'nowrap', fontWeight: 500 }}>Arangetram Guidance</span>
                 </div>
 
@@ -290,7 +262,7 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
                   onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
-                    handleEnquire('Bharatanatyam')
+                    handleEnquire('Classical Bharatanatyam Training')
                   }}
                   className="btn-primary"
                   style={{
@@ -313,7 +285,7 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(2, 1fr)',
             gap: '24px',
           }}
           className="secondary-courses-grid"
