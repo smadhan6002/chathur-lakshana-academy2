@@ -8,7 +8,6 @@ export const AVAILABLE_COURSES = [
   'Nattuvangam',
   'Dance Theory',
   'Choreography',
-  'Fine Arts Studio Mentorship',
   'General / Multiple Courses',
 ] as const
 
@@ -56,7 +55,7 @@ export default function EnquiryModal({
       setEnquiryType(initialType || 'Course Enrolment')
       if (initialCourse && AVAILABLE_COURSES.includes(initialCourse as any)) {
         setCourse(initialCourse)
-      } else if (initialType === 'General Enquiry') {
+      } else if (initialType === 'General Enquiry' || initialCourse === 'Fine Arts Studio Mentorship') {
         setCourse('General / Multiple Courses')
       } else {
         setCourse('Classical Bharatanatyam Training')

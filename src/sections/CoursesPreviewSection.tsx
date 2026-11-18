@@ -248,8 +248,12 @@ export default function CoursesPreviewSection({
                   Children (Ages 5+), Teens, and Adult Beginners
                 </div>
                 <div>
-                  <strong style={{ color: 'var(--accent-gold)', display: 'block' }}>Special Advanced Classes:</strong>
-                  Mon, Wed &amp; Fri &bull; 9:00 AM – 11:00 AM
+                  <strong style={{ color: 'var(--accent-gold)', display: 'block' }}>Master Classes:</strong>
+                  Monday, Wednesday &amp; Friday
+                </div>
+                <div>
+                  <strong style={{ color: 'var(--accent-gold)', display: 'block' }}>Regular Classes:</strong>
+                  Weekdays Only
                 </div>
                 <div>
                   <strong style={{ color: 'var(--text-primary)', display: 'block' }}>Studio Location:</strong>

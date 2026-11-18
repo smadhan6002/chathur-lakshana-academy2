@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { MessageSquare, Phone, Mail, MapPin, Clock, Send, Sparkles } from 'lucide-react'
+import { MessageSquare, Phone, Mail, MapPin, Clock, Calendar, Send, Sparkles } from 'lucide-react'
 import contactImage from '../img/imp 1.jpeg'
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -159,92 +159,101 @@ export default function ContactSection({ onOpenEnquiry }: ContactSectionProps) {
                   Chathur Lakshana Academy of Fine Arts,<br/>Mylapore, Chennai 600004, Tamil Nadu, India
                 </p>
 
-                {/* Special Advanced Classes Information Card */}
+                {/* Class Schedule Cards: Master Classes & Regular Classes */}
                 <div
+                  className="class-schedule-grid"
                   style={{
-                    backgroundColor: 'rgba(22, 8, 17, 0.85)',
-                    border: '1.5px solid rgba(212, 175, 101, 0.45)',
-                    borderRadius: '3px',
-                    padding: '18px 20px',
-                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 16px rgba(212, 175, 101, 0.05)',
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '14px',
                   }}
                 >
+                  {/* Master Classes Card */}
                   <div
                     style={{
+                      backgroundColor: 'rgba(22, 8, 17, 0.85)',
+                      border: '1.5px solid rgba(212, 175, 101, 0.45)',
+                      borderRadius: '3px',
+                      padding: '18px 20px',
+                      boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 16px rgba(212, 175, 101, 0.05)',
                       display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '11.5px',
-                      letterSpacing: '0.22em',
-                      fontWeight: 700,
-                      color: 'var(--accent-gold)',
-                      textTransform: 'uppercase',
-                      marginBottom: '12px',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
                     }}
                   >
-                    <Clock size={15} color="var(--accent-gold)" />
-                    <span>SPECIAL ADVANCED CLASSES</span>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '11px',
+                        letterSpacing: '0.2em',
+                        fontWeight: 700,
+                        color: 'var(--accent-gold)',
+                        textTransform: 'uppercase',
+                        marginBottom: '10px',
+                      }}
+                    >
+                      <Clock size={14} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
+                      <span>MASTER CLASSES</span>
+                    </div>
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '14.5px',
+                        color: '#FFF4E5',
+                        fontWeight: 500,
+                        lineHeight: 1.45,
+                        margin: 0,
+                      }}
+                    >
+                      Monday, Wednesday &amp; Friday
+                    </p>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '14px' }}>
-                    <div>
-                      <span
-                        style={{
-                          display: 'block',
-                          fontFamily: 'var(--font-body)',
-                          fontSize: '10.5px',
-                          letterSpacing: '0.18em',
-                          color: 'var(--accent-gold-light)',
-                          textTransform: 'uppercase',
-                          marginBottom: '4px',
-                          fontWeight: 600,
-                        }}
-                      >
-                        DAYS
-                      </span>
-                      <p
-                        style={{
-                          fontFamily: 'var(--font-body)',
-                          fontSize: '14.5px',
-                          color: '#FFF4E5',
-                          fontWeight: 500,
-                          lineHeight: 1.4,
-                          margin: 0,
-                        }}
-                      >
-                        Monday, Wednesday &amp; Friday
-                      </p>
+                  {/* Regular Classes Card */}
+                  <div
+                    style={{
+                      backgroundColor: 'rgba(22, 8, 17, 0.85)',
+                      border: '1.5px solid rgba(212, 175, 101, 0.45)',
+                      borderRadius: '3px',
+                      padding: '18px 20px',
+                      boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 16px rgba(212, 175, 101, 0.05)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '11px',
+                        letterSpacing: '0.2em',
+                        fontWeight: 700,
+                        color: 'var(--accent-gold)',
+                        textTransform: 'uppercase',
+                        marginBottom: '10px',
+                      }}
+                    >
+                      <Calendar size={14} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
+                      <span>REGULAR CLASSES</span>
                     </div>
-
-                    <div>
-                      <span
-                        style={{
-                          display: 'block',
-                          fontFamily: 'var(--font-body)',
-                          fontSize: '10.5px',
-                          letterSpacing: '0.18em',
-                          color: 'var(--accent-gold-light)',
-                          textTransform: 'uppercase',
-                          marginBottom: '4px',
-                          fontWeight: 600,
-                        }}
-                      >
-                        TIMING
-                      </span>
-                      <p
-                        style={{
-                          fontFamily: 'var(--font-body)',
-                          fontSize: '15px',
-                          color: 'var(--accent-gold)',
-                          fontWeight: 600,
-                          lineHeight: 1.4,
-                          margin: 0,
-                        }}
-                      >
-                        9:00 AM – 11:00 AM
-                      </p>
-                    </div>
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '14.5px',
+                        color: '#FFF4E5',
+                        fontWeight: 500,
+                        lineHeight: 1.45,
+                        margin: 0,
+                      }}
+                    >
+                      Weekdays Only
+                    </p>
                   </div>
                 </div>
               </div>
@@ -480,6 +489,7 @@ export default function ContactSection({ onOpenEnquiry }: ContactSectionProps) {
         }
         @media (max-width: 580px) {
           .contact-boxes-grid { grid-template-columns: 1fr !important; }
+          .class-schedule-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

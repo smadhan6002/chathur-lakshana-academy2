@@ -93,9 +93,22 @@ export default function AcademySection() {
               background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
               margin: '0 auto 24px',
             }} />
+            <h3 style={{
+              fontFamily: "var(--font-display)",
+              fontSize: 'clamp(1.45rem, 2.8vw, 2.35rem)',
+              fontWeight: 400,
+              color: 'var(--accent-gold-light)',
+              letterSpacing: '0.02em',
+              lineHeight: 1.35,
+              textAlign: 'center',
+              maxWidth: '820px',
+              margin: '0 auto 20px',
+            }}>
+              A lineage kept alive, One Moment at a time
+            </h3>
             <p style={{
               fontFamily: "var(--font-display)",
-              fontSize: 'clamp(1.25rem, 2vw, 1.6rem)',
+              fontSize: 'clamp(1.1rem, 1.8vw, 1.45rem)',
               fontStyle: 'italic',
               color: 'var(--text-secondary)',
               lineHeight: 1.6,
