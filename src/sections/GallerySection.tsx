@@ -2,7 +2,41 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect, useCallback } from 'react'
 import { fetchActiveMedia } from '../lib/mediaService'
 import type { MediaItem } from '../lib/mediaService'
-import { GALLERY_CATEGORIES } from '../admin/config'
+
+const GALLERY_SECTION_CATEGORIES = [
+  'All',
+  'Solo Performances',
+  'Group Performances',
+  'Arangetrams',
+  'Productions',
+  'Workshops',
+  'Classroom',
+] as const
+
+function normalizeGalleryCategory(rawCategory?: string): string {
+  const normalized = (rawCategory || '').trim().toLowerCase()
+  switch (normalized) {
+    case 'solo performances':
+    case 'performances':
+      return 'Solo Performances'
+    case 'group performances':
+    case 'festivals':
+      return 'Group Performances'
+    case 'arangetrams':
+    case 'arangetram':
+      return 'Arangetrams'
+    case 'productions':
+    case 'production':
+      return 'Productions'
+    case 'workshops':
+    case 'workshop':
+      return 'Workshops'
+    case 'classroom':
+      return 'Classroom'
+    default:
+      return rawCategory?.trim() || 'Solo Performances'
+  }
+}
 
 // Import real local assets
 import img1 from '../assets/jayashree_srinivasann_72390dc097ca46fdb51378c242cc129c.jpg'
@@ -28,16 +62,16 @@ interface GalleryDisplayItem {
 
 // Static fallback images — always displayed
 const staticPerformances: GalleryDisplayItem[] = [
-  { id: 'static_1', category: 'PERFORMANCES', title: 'Margazhi Recital', description: 'Graceful abhinaya capturing the essence of devotion.', imageUrl: img1, createdAt: 1000 },
-  { id: 'static_2', category: 'CLASSROOM', title: 'Adavu Practice', description: 'Perfecting footwork with precision and rhythm.', imageUrl: img2, createdAt: 999 },
-  { id: 'static_3', category: 'PERFORMANCES', title: 'Temple Offering', description: 'A devotional offering to the divine.', imageUrl: img3, createdAt: 998 },
-  { id: 'static_4', category: 'ARANGETRAMS', title: 'Arangetram Moments', description: 'The grand debut performance.', imageUrl: img4, createdAt: 997 },
-  { id: 'static_5', category: 'PERFORMANCES', title: 'Varnam Excerpt', description: 'Complex rhythmic patterns and expressive storytelling.', imageUrl: img5, createdAt: 996 },
-  { id: 'static_6', category: 'FESTIVALS', title: 'Group Choreography', description: 'Synchronized movements in thematic productions.', imageUrl: img6, createdAt: 995 },
-  { id: 'static_7', category: 'PERFORMANCES', title: 'Tillana Joy', description: 'The vibrant and rhythmic conclusion.', imageUrl: img7, createdAt: 994 },
-  { id: 'static_8', category: 'CLASSROOM', title: 'Guru Shishya Parampara', description: 'Imparting traditional knowledge.', imageUrl: img8, createdAt: 993 },
-  { id: 'static_9', category: 'FESTIVALS', title: 'Cultural Showcase', description: 'Celebrating our rich heritage on stage.', imageUrl: img9, createdAt: 992 },
-  { id: 'static_10', category: 'PERFORMANCES', title: 'Purana Manjari', description: 'Thematic production staging ancient epics.', imageUrl: img10, createdAt: 991 },
+  { id: 'static_1', category: 'Solo Performances', title: 'Margazhi Recital', description: 'Graceful abhinaya capturing the essence of devotion.', imageUrl: img1, createdAt: 1000 },
+  { id: 'static_2', category: 'Classroom', title: 'Adavu Practice', description: 'Perfecting footwork with precision and rhythm.', imageUrl: img2, createdAt: 999 },
+  { id: 'static_3', category: 'Solo Performances', title: 'Temple Offering', description: 'A devotional offering to the divine.', imageUrl: img3, createdAt: 998 },
+  { id: 'static_4', category: 'Arangetrams', title: 'Arangetram Moments', description: 'The grand debut performance.', imageUrl: img4, createdAt: 997 },
+  { id: 'static_5', category: 'Solo Performances', title: 'Varnam Excerpt', description: 'Complex rhythmic patterns and expressive storytelling.', imageUrl: img5, createdAt: 996 },
+  { id: 'static_6', category: 'Group Performances', title: 'Group Choreography', description: 'Synchronized movements in thematic productions.', imageUrl: img6, createdAt: 995 },
+  { id: 'static_7', category: 'Solo Performances', title: 'Tillana Joy', description: 'The vibrant and rhythmic conclusion.', imageUrl: img7, createdAt: 994 },
+  { id: 'static_8', category: 'Classroom', title: 'Guru Shishya Parampara', description: 'Imparting traditional knowledge.', imageUrl: img8, createdAt: 993 },
+  { id: 'static_9', category: 'Group Performances', title: 'Cultural Showcase', description: 'Celebrating our rich heritage on stage.', imageUrl: img9, createdAt: 992 },
+  { id: 'static_10', category: 'Productions', title: 'Purana Manjari', description: 'Thematic production staging ancient epics.', imageUrl: img10, createdAt: 991 },
 ]
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -62,7 +96,7 @@ function GalleryImage({ src, alt }: { src: string; alt: string }) {
 }
 
 export default function GallerySection() {
-  const [activeCategory, setActiveCategory] = useState('ALL')
+  const [activeCategory, setActiveCategory] = useState<string>('All')
   const [items, setItems] = useState<GalleryDisplayItem[]>([])
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -74,7 +108,7 @@ export default function GallerySection() {
       if (dbItems && dbItems.length > 0) {
         const mapped: GalleryDisplayItem[] = dbItems.map(item => ({
           id: item.id,
-          category: item.category || 'PERFORMANCES',
+          category: normalizeGalleryCategory(item.category),
           title: item.title,
           description: item.description || '',
           imageUrl: item.media_url,
@@ -100,7 +134,7 @@ export default function GallerySection() {
     return () => window.removeEventListener('focus', handleFocus)
   }, [loadGalleryItems])
 
-  const filteredItems = activeCategory === 'ALL'
+  const filteredItems = activeCategory === 'All'
     ? items
     : items.filter(item => item.category === activeCategory)
 
@@ -180,7 +214,7 @@ export default function GallerySection() {
               flexWrap: 'wrap',
               marginBottom: '48px',
             }}>
-              {GALLERY_CATEGORIES.map(cat => {
+              {GALLERY_SECTION_CATEGORIES.map(cat => {
                 const isActive = activeCategory === cat
                 return (
                   <button
@@ -193,9 +227,8 @@ export default function GallerySection() {
                       fontFamily: "var(--font-body)",
                       fontSize: 'clamp(11px, 1.4vw, 12.5px)',
                       fontWeight: 600,
-                      letterSpacing: '0.18em',
+                      letterSpacing: '0.14em',
                       color: isActive ? 'var(--accent-gold-light)' : 'var(--text-secondary)',
-                      textTransform: 'uppercase',
                       cursor: 'pointer',
                       padding: '10px 20px',
                       transition: 'all 0.3s ease',
@@ -429,9 +462,8 @@ export default function GallerySection() {
                 fontFamily: "var(--font-body)",
                 fontSize: '11px',
                 fontWeight: 600,
-                letterSpacing: '0.25em',
+                letterSpacing: '0.16em',
                 color: 'var(--accent-gold)',
-                textTransform: 'uppercase',
                 marginBottom: '6px',
               }}>
                 ✦ {filteredItems[currentImageIndex].category}
@@ -518,10 +550,9 @@ export default function GallerySection() {
           display: block;
           font-family: var(--font-body);
           font-size: 11px;
-          fontWeight: 600;
-          letter-spacing: 0.22em;
+          font-weight: 600;
+          letter-spacing: 0.14em;
           color: var(--accent-gold);
-          text-transform: uppercase;
           margin-bottom: 6px;
         }
 

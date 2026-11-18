@@ -20,7 +20,7 @@ const founderArtisticJourney = [
   {
     year: 'Productions',
     title: 'Acclaimed Thematic Choreographies',
-    desc: 'Conceived, choreographed, and staged celebrated thematic productions celebrating cultural heritage, womanhood, and sacred texts, including Women – from Earthenware to Software, Sthree – Women Through the Ages, Vaggeya Bharatam, Upanisad Bharatam, SHE, Krishna Bharatam, Festivals of Tamil Nadu, and Suchinthai Maalai.',
+    desc: 'Conceived, choreographed, and staged celebrated thematic productions celebrating cultural heritage, womanhood, and sacred texts, including Women – from Earthenware to Software, Sthree – Women Through the Ages, Vaggeya Bharatam, Upanisad Bharatam, SHE, Krishna Bharatam, Festivals of Tamil Nadu, Suchinthai Maalai, and Arama Marama.',
     badge: 'Original Choreography',
   },
   {
@@ -40,12 +40,6 @@ const founderArtisticJourney = [
     title: 'Anbe Jeevadharam',
     desc: 'Love, the essence of life — Staged in January 2026, Bharatiya Vidya Bhavan. Four stories, one theme, LOVE.',
     badge: 'Coming Soon...',
-  },
-  {
-    year: 'Production',
-    title: 'Arama Marama',
-    desc: '',
-    badge: 'Production',
   },
   {
     year: '2025–2026',
@@ -811,7 +805,9 @@ export default function FounderSection() {
                 gap: '24px',
               }}
             >
-              {featuredProductions.map((prod) => (
+              {featuredProductions.map((prod) => {
+                const isTitleOnly = !prod.subtitle && !prod.details && !prod.desc
+                return (
                 <div
                   key={prod.title}
                   style={{
@@ -821,6 +817,9 @@ export default function FounderSection() {
                     padding: 'clamp(26px, 3.5vw, 36px) clamp(22px, 3vw, 30px)',
                     display: 'flex',
                     flexDirection: 'column',
+                    justifyContent: isTitleOnly ? 'center' : 'flex-start',
+                    alignItems: isTitleOnly ? 'center' : 'stretch',
+                    textAlign: isTitleOnly ? 'center' : 'left',
                     position: 'relative',
                     boxShadow: '0 14px 36px rgba(0, 0, 0, 0.42)',
                     transition: 'all 0.35s ease',
@@ -837,6 +836,22 @@ export default function FounderSection() {
                   {/* Corner Gold Motifs */}
                   <div style={{ position: 'absolute', top: '6px', left: '6px', width: '8px', height: '8px', borderTop: '1.5px solid var(--accent-gold)', borderLeft: '1.5px solid var(--accent-gold)', opacity: 0.7 }} />
                   <div style={{ position: 'absolute', bottom: '6px', right: '6px', width: '8px', height: '8px', borderBottom: '1.5px solid var(--accent-gold)', borderRight: '1.5px solid var(--accent-gold)', opacity: 0.7 }} />
+
+                  {isTitleOnly && (
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '10.5px',
+                        fontWeight: 600,
+                        letterSpacing: '0.2em',
+                        color: 'var(--accent-gold)',
+                        textTransform: 'uppercase',
+                        marginBottom: '12px',
+                      }}
+                    >
+                      ✦ CHATHUR LAKSHANA PRODUCTION ✦
+                    </div>
+                  )}
 
                   {prod.status && (
                     <div style={{ marginBottom: '12px' }}>
@@ -863,15 +878,25 @@ export default function FounderSection() {
                   <h4
                     style={{
                       fontFamily: 'var(--font-display)',
-                      fontSize: 'clamp(1.45rem, 2.2vw, 1.85rem)',
+                      fontSize: isTitleOnly ? 'clamp(1.7rem, 2.5vw, 2.1rem)' : 'clamp(1.45rem, 2.2vw, 1.85rem)',
                       fontWeight: 500,
                       color: '#FFF4E5',
                       lineHeight: 1.25,
-                      margin: '0 0 8px',
+                      margin: isTitleOnly ? '0 0 14px' : '0 0 8px',
                     }}
                   >
                     {prod.title}
                   </h4>
+
+                  {isTitleOnly && (
+                    <div
+                      style={{
+                        width: '48px',
+                        height: '1.5px',
+                        background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
+                      }}
+                    />
+                  )}
 
                   {prod.subtitle && (
                     <div
@@ -919,7 +944,8 @@ export default function FounderSection() {
                     </p>
                   )}
                 </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </FadeIn>
