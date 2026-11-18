@@ -5,6 +5,13 @@ interface AcademyPillarsPreviewProps {
   onNavigateToAcademy: () => void
 }
 
+const pillars = [
+  { name: 'ANGIKAM', title: 'Body & Form', desc: 'Precision of limb, gaze (drishti bhedam), and sculpted physical geometry.' },
+  { name: 'VACHIKAM', title: 'Rhythm & Song', desc: 'Musicality, tala recitation, and deep resonance with the Carnatic sahityam.' },
+  { name: 'AHARYAM', title: 'Aesthetic Lineage', desc: 'Sacred adornment, traditional costume, and reverent stage presentation.' },
+  { name: 'SATVIKAM', title: 'Emotion & Devotion', desc: 'Inner abhinaya, bhava, and spiritual surrender to the divine.' },
+]
+
 export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPillarsPreviewProps) {
   return (
     <section
@@ -56,13 +63,18 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
           </p>
         </div>
 
-        {/* Centered Framed Academy Photography */}
+        {/* Two Column Preview: Academy Photo + 4 Pillars Grid */}
         <div
           style={{
-            maxWidth: '640px',
-            margin: '0 auto 44px',
+            display: 'grid',
+            gridTemplateColumns: '5fr 7fr',
+            gap: 'clamp(32px, 5vw, 60px)',
+            alignItems: 'center',
+            marginBottom: '40px',
           }}
+          className="pillars-preview-grid"
         >
+          {/* Left: Framed Academy Photo */}
           <div
             style={{
               position: 'relative',
@@ -73,11 +85,6 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
               boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)',
             }}
           >
-            {/* Corner Gold Motifs */}
-            <div style={{ position: 'absolute', top: '-3px', left: '-3px', width: '10px', height: '10px', borderTop: '2px solid var(--accent-gold)', borderLeft: '2px solid var(--accent-gold)' }} />
-            <div style={{ position: 'absolute', top: '-3px', right: '-3px', width: '10px', height: '10px', borderTop: '2px solid var(--accent-gold)', borderRight: '2px solid var(--accent-gold)' }} />
-            <div style={{ position: 'absolute', bottom: '-3px', left: '-3px', width: '10px', height: '10px', borderBottom: '2px solid var(--accent-gold)', borderLeft: '2px solid var(--accent-gold)' }} />
-            <div style={{ position: 'absolute', bottom: '-3px', right: '-3px', width: '10px', height: '10px', borderBottom: '2px solid var(--accent-gold)', borderRight: '2px solid var(--accent-gold)' }} />
             <img
               src={academyImage}
               alt="Classical Bharatanatyam discipline at Chathur Lakshana Academy"
@@ -88,6 +95,70 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
                 filter: 'contrast(1.06) saturate(0.96)',
               }}
             />
+          </div>
+
+          {/* Right: 4 Pillars Cards */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="four-pillars-cards">
+            {pillars.map((p) => (
+              <div
+                key={p.name}
+                style={{
+                  backgroundColor: '#301326',
+                  border: '1px solid rgba(212, 175, 101, 0.28)',
+                  padding: '24px 20px',
+                  borderRadius: '2px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(212, 175, 101, 0.65)'
+                  e.currentTarget.style.transform = 'translateY(-3px)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(212, 175, 101, 0.28)'
+                  e.currentTarget.style.transform = 'translateY(0)'
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '11px',
+                    fontWeight: 600,
+                    letterSpacing: '0.2em',
+                    color: 'var(--accent-gold)',
+                    textTransform: 'uppercase',
+                    marginBottom: '8px',
+                  }}
+                >
+                  ✦ {p.name}
+                </div>
+
+                <div
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '20px',
+                    color: 'var(--text-primary)',
+                    fontWeight: 500,
+                    marginBottom: '8px',
+                  }}
+                >
+                  {p.title}
+                </div>
+
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13.5px',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  {p.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -111,6 +182,15 @@ export default function AcademyPillarsPreview({ onNavigateToAcademy }: AcademyPi
           </button>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .pillars-preview-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 580px) {
+          .four-pillars-cards { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   )
 }
