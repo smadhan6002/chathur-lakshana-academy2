@@ -213,19 +213,6 @@ export default function AchievementsSection() {
         {/* Section Header */}
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: 'clamp(50px, 8vw, 84px)' }}>
-            <div
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '12px',
-                fontWeight: 600,
-                letterSpacing: '0.25em',
-                color: 'var(--accent-gold)',
-                textTransform: 'uppercase',
-                marginBottom: '16px',
-              }}
-            >
-              ✧ AWARDS AND ACHIEVEMENTS ✧
-            </div>
             <h2
               style={{
                 fontFamily: 'var(--font-display)',

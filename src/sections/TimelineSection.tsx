@@ -16,7 +16,7 @@ const timelineEvents = [
   {
     year: 'Productions',
     title: 'Acclaimed Thematic Choreographies',
-    desc: 'Conceived and staged celebrated thematic dance productions celebrating heritage, womanhood, and sacred texts, including Women – from Earthenware to Software, Sthree – Women Through the Ages, Kuttrala Kuravanji, Vaggeya Bharatam, Upanisad Bharatam, SHE, Krishna Bharatam, Festivals of Tamil Nadu, and Suchinthai Maalai.',
+    desc: 'Conceived and staged celebrated thematic dance productions celebrating heritage, womanhood, and sacred texts, including Women – from Earthenware to Software, Sthree – Women Through the Ages, Vaggeya Bharatam, Upanisad Bharatam, SHE, Krishna Bharatam, Festivals of Tamil Nadu, and Suchinthai Maalai.',
   },
   {
     year: '2019 & 2024',
@@ -25,8 +25,18 @@ const timelineEvents = [
   },
   {
     year: 'Jan 16, 2025',
-    title: 'Panniru Thingalum Pazhindridu Vizhakkalum',
+    title: 'Panniru Thingalum Payindridu Vizhaakkalum',
     desc: 'Major thematic production choreographed and staged for Nada Sudha Trust, celebrating the sacred cycle of traditional temple festivals across the twelve Tamil months.',
+  },
+  {
+    year: 'January 2026',
+    title: 'Anbe Jeevadharam',
+    desc: 'Love, the essence of life — Staged in January 2026, Bharatiya Vidya Bhavan. Four stories, one theme, LOVE.',
+  },
+  {
+    year: 'Production',
+    title: 'Arama Marama',
+    desc: '',
   },
   {
     year: '2025–2026',

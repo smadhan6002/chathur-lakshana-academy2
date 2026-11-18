@@ -75,7 +75,7 @@ export default function FounderIntroPreview({ onNavigateToFounder }: FounderIntr
             >
               <span>✦ Ph.D. Bharatanatyam</span>
               <span>✦ Kalakshetra Alumna</span>
-              <span>✦ Doordarshan B-Grade</span>
+              <span>✦ Doordarshan B-High Grade</span>
             </div>
           </div>
 
@@ -159,7 +159,7 @@ export default function FounderIntroPreview({ onNavigateToFounder }: FounderIntr
                   margin: 0,
                 }}
               >
-                "Art with beauty as a knowledge system — nurturing classical discipline and cultural heritage for posterity."
+                "Art with beauty and education without fear – nurturing classical discipline and cultural heritage for posterity."
               </p>
             </div>
 

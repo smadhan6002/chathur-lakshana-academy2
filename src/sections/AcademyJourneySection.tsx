@@ -33,18 +33,18 @@ const academyMilestones = [
   {
     step: '04',
     eraTag: 'Jan 16, 2025',
-    title: 'Panniru Thingalum',
+    title: 'Panniru Thingalum Payindridu Vizhaakkalum',
     icon: Sparkles,
     category: 'MAJOR PRODUCTION',
-    desc: 'Panniru Thingalum Pazhindridu Vizhakkalum — a major thematic production choreographed and staged for Nada Sudha Trust, celebrating the sacred cycle of traditional temple festivals across the twelve Tamil months.',
+    desc: 'A major thematic production choreographed and staged for Nada Sudha Trust, celebrating the sacred cycle of traditional temple festivals across the twelve Tamil months.',
   },
   {
     step: '05',
-    eraTag: 'Major Production',
+    eraTag: 'January 2026',
     title: 'Anbe Jeevadharam',
     icon: Theater,
     category: 'MAJOR PRODUCTION',
-    desc: 'A significant thematic dance production presented by Chathur Lakshana Academy of Fine Arts, uniting classical movement vocabulary, nuanced abhinaya, and cohesive ensemble stagecraft.',
+    desc: 'Love, the essence of life — Staged in January 2026, Bharatiya Vidya Bhavan. Four stories, one theme, LOVE.',
   },
   {
     step: '06',

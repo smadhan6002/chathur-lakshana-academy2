@@ -20,7 +20,7 @@ const founderArtisticJourney = [
   {
     year: 'Productions',
     title: 'Acclaimed Thematic Choreographies',
-    desc: 'Conceived, choreographed, and staged celebrated thematic productions celebrating cultural heritage, womanhood, and sacred texts, including Women – from Earthenware to Software, Sthree – Women Through the Ages, Kuttrala Kuravanji, Vaggeya Bharatam, Upanisad Bharatam, SHE, Krishna Bharatam, Festivals of Tamil Nadu, and Suchinthai Maalai.',
+    desc: 'Conceived, choreographed, and staged celebrated thematic productions celebrating cultural heritage, womanhood, and sacred texts, including Women – from Earthenware to Software, Sthree – Women Through the Ages, Vaggeya Bharatam, Upanisad Bharatam, SHE, Krishna Bharatam, Festivals of Tamil Nadu, and Suchinthai Maalai.',
     badge: 'Original Choreography',
   },
   {
@@ -31,15 +31,52 @@ const founderArtisticJourney = [
   },
   {
     year: 'Jan 16, 2025',
-    title: 'Panniru Thingalum Pazhindridu Vizhakkalum',
+    title: 'Panniru Thingalum Payindridu Vizhaakkalum',
     desc: 'Major thematic production choreographed and staged for Nada Sudha Trust, celebrating the sacred cycle of traditional temple festivals across the twelve Tamil months.',
     badge: 'Nada Sudha Trust',
+  },
+  {
+    year: 'January 2026',
+    title: 'Anbe Jeevadharam',
+    desc: 'Love, the essence of life — Staged in January 2026, Bharatiya Vidya Bhavan. Four stories, one theme, LOVE.',
+    badge: 'Coming Soon...',
+  },
+  {
+    year: 'Production',
+    title: 'Arama Marama',
+    desc: '',
+    badge: 'Production',
   },
   {
     year: '2025–2026',
     title: 'Vani Kala Nipuna Conferred',
     desc: 'Prestigious title conferred for Bharatanatyam by Sri Thyaga Brahma Gana Sabha, honouring decades of unwavering performance, scholarly research, and dedicated teaching.',
     badge: 'Prestigious Title',
+  },
+]
+
+// Verified Client-Specified Productions Showcase
+const featuredProductions: {
+  title: string
+  subtitle?: string
+  details?: string
+  desc?: string
+  status?: string
+}[] = [
+  {
+    title: 'Panniru Thingalum Payindridu Vizhaakkalum',
+    details: 'Jan 16, 2025 • Nada Sudha Trust',
+    desc: 'Major thematic production choreographed and staged for Nada Sudha Trust, celebrating the sacred cycle of traditional temple festivals across the twelve Tamil months.',
+  },
+  {
+    title: 'Anbe Jeevadharam',
+    subtitle: 'Love, the essence of life',
+    details: 'Staged in January 2026, Bharatiya Vidya Bhavan',
+    desc: 'Four stories, one theme, LOVE.',
+    status: 'Coming Soon...',
+  },
+  {
+    title: 'Arama Marama',
   },
 ]
 
@@ -118,7 +155,7 @@ const formerRoles = [
     desc: 'Coordinated academic activities under its Off-Campus Degree Programme.',
   },
   {
-    role: 'B Grade Artist',
+    role: 'B-High Grade Artist',
     organization: 'Doordarshan',
     desc: 'Auditioned and graded national broadcast television performing artiste.',
   },
@@ -295,7 +332,7 @@ export default function FounderSection() {
               >
                 <span>✦ Ph.D. Bharatanatyam</span>
                 <span>✦ Kalakshetra Alumna</span>
-                <span>✦ Doordarshan B-Grade</span>
+                <span>✦ Doordarshan B-High Grade</span>
               </div>
             </div>
           </FadeIn>
@@ -369,7 +406,7 @@ export default function FounderSection() {
                   marginBottom: '32px',
                 }}
               >
-                A graded B-Grade artist at Doordarshan and an invited performer at the prestigious Cleveland Aradhana Festival (USA) in both 2019 and 2024, Dr. Radhika brings deep interdisciplinary scholarly inquiry to her dance pedagogy. Holding an MFA in Bharatanatyam (First Class) and a Ph.D. from Bharathiar University through research with the Tamil Department, she blends immaculate Kalakshetra technique with rich literary scholarship.
+                A B-High grade artist at Doordarshan and an invited performer at the prestigious Cleveland Aradhana Festival (USA) in both 2019 and 2024, Dr. Radhika brings deep interdisciplinary scholarly inquiry to her dance pedagogy. Holding an MFA in Bharatanatyam (First Class) and a Ph.D. from Bharathiar University through research with the Tamil Department, she blends immaculate Kalakshetra technique with rich literary scholarship.
               </p>
 
               {/* Verified Quote / Callout */}
@@ -391,7 +428,7 @@ export default function FounderSection() {
                     margin: 0,
                   }}
                 >
-                  "Art with beauty as a knowledge system — nurturing classical discipline and cultural heritage for posterity."
+                  "Art with beauty and education without fear – nurturing classical discipline and cultural heritage for posterity."
                 </p>
               </div>
             </div>
@@ -500,12 +537,14 @@ export default function FounderSection() {
                           {m.badge}
                         </span>
                       </div>
-                      <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', color: 'var(--text-primary)', margin: '0 0 10px', fontWeight: 500, lineHeight: 1.3 }}>
+                      <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', color: 'var(--text-primary)', margin: m.desc ? '0 0 10px' : 0, fontWeight: 500, lineHeight: 1.3 }}>
                         {m.title}
                       </h4>
-                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.65, marginTop: 'auto' }}>
-                        {m.desc}
-                      </p>
+                      {m.desc && (
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.65, marginTop: 'auto' }}>
+                          {m.desc}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -723,12 +762,174 @@ export default function FounderSection() {
             )}
           </div>
         </FadeIn>
+
+        {/* Dedicated Productions Showcase */}
+        <FadeIn delay={0.25}>
+          <div style={{ marginTop: 'clamp(64px, 8vw, 96px)' }}>
+            <div style={{ textAlign: 'center', marginBottom: 'clamp(36px, 5vw, 52px)' }}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '11.5px',
+                  fontWeight: 600,
+                  letterSpacing: '0.25em',
+                  color: 'var(--accent-gold)',
+                  textTransform: 'uppercase',
+                  marginBottom: '12px',
+                }}
+              >
+                ✧ CHATHUR LAKSHANA PRODUCTIONS ✧
+              </div>
+              <h3
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(2.2rem, 4.4vw, 3.8rem)',
+                  fontWeight: 400,
+                  color: '#F5DDA0',
+                  textShadow: '0 0 22px rgba(212, 175, 101, 0.28)',
+                  lineHeight: 1.15,
+                  margin: '0 0 16px',
+                }}
+              >
+                Productions
+              </h3>
+              <div
+                style={{
+                  width: '70px',
+                  height: '1.5px',
+                  background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
+                  margin: '0 auto',
+                }}
+              />
+            </div>
+
+            <div
+              className="productions-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '24px',
+              }}
+            >
+              {featuredProductions.map((prod) => (
+                <div
+                  key={prod.title}
+                  style={{
+                    backgroundColor: '#301326',
+                    border: '1px solid rgba(212, 175, 101, 0.35)',
+                    borderRadius: '2px',
+                    padding: 'clamp(26px, 3.5vw, 36px) clamp(22px, 3vw, 30px)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    position: 'relative',
+                    boxShadow: '0 14px 36px rgba(0, 0, 0, 0.42)',
+                    transition: 'all 0.35s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(212, 175, 101, 0.75)'
+                    e.currentTarget.style.transform = 'translateY(-4px)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(212, 175, 101, 0.35)'
+                    e.currentTarget.style.transform = 'translateY(0)'
+                  }}
+                >
+                  {/* Corner Gold Motifs */}
+                  <div style={{ position: 'absolute', top: '6px', left: '6px', width: '8px', height: '8px', borderTop: '1.5px solid var(--accent-gold)', borderLeft: '1.5px solid var(--accent-gold)', opacity: 0.7 }} />
+                  <div style={{ position: 'absolute', bottom: '6px', right: '6px', width: '8px', height: '8px', borderBottom: '1.5px solid var(--accent-gold)', borderRight: '1.5px solid var(--accent-gold)', opacity: 0.7 }} />
+
+                  {prod.status && (
+                    <div style={{ marginBottom: '12px' }}>
+                      <span
+                        style={{
+                          display: 'inline-block',
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '10.5px',
+                          fontWeight: 600,
+                          letterSpacing: '0.16em',
+                          color: 'var(--accent-gold)',
+                          background: 'rgba(212, 175, 101, 0.14)',
+                          border: '1px solid rgba(212, 175, 101, 0.38)',
+                          padding: '4px 10px',
+                          borderRadius: '2px',
+                          textTransform: 'uppercase',
+                        }}
+                      >
+                        {prod.status}
+                      </span>
+                    </div>
+                  )}
+
+                  <h4
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(1.45rem, 2.2vw, 1.85rem)',
+                      fontWeight: 500,
+                      color: '#FFF4E5',
+                      lineHeight: 1.25,
+                      margin: '0 0 8px',
+                    }}
+                  >
+                    {prod.title}
+                  </h4>
+
+                  {prod.subtitle && (
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '1.15rem',
+                        fontStyle: 'italic',
+                        color: 'var(--accent-gold-light)',
+                        marginBottom: '10px',
+                      }}
+                    >
+                      {prod.subtitle}
+                    </div>
+                  )}
+
+                  {prod.details && (
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        letterSpacing: '0.12em',
+                        color: 'var(--accent-gold)',
+                        textTransform: 'uppercase',
+                        marginBottom: '14px',
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {prod.details}
+                    </div>
+                  )}
+
+                  {prod.desc && (
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '14.5px',
+                        color: 'var(--text-secondary)',
+                        lineHeight: 1.7,
+                        margin: 0,
+                        marginTop: 'auto',
+                      }}
+                    >
+                      {prod.desc}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
       </div>
 
       <style>{`
         @media (max-width: 900px) {
           .founder-grid { grid-template-columns: 1fr !important; gap: 50px !important; }
           .experience-cols { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .productions-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>
