@@ -5,26 +5,26 @@ const secondaryCourses = [
   {
     level: 'INTERMEDIATE → ADVANCED',
     title: 'Nattuvangam',
-    desc: 'Structured training in cymbals, sollukattu recitation, rhythmic accompaniment, and recital conducting in the Kalakshetra tradition.',
+    desc: 'Structured training in cymbals, sollukattu recitation, rhythmic accompaniment, and conducting of recitals.',
     details: 'Sollukattu mastery · Tala precision · Recital accompaniment',
   },
   {
     level: 'ALL LEVELS',
     title: 'Dance Theory',
-    desc: 'In-depth study of Natya Shastra, Abhinaya Darpana, tala architecture, and classical Sanskrit and Tamil sahityam.',
-    details: 'Classical treatises · Sahityam study · Philosophical foundations',
+    desc: 'In-depth study of Natya Shastra, Abhinaya Darpana, tala architecture, and Classical Sanskrit and Tamil treatises.',
+    details: 'Classical Sanskrit and Tamil treatises · Natya Shastra · Philosophical foundations',
   },
   {
     level: 'SENIOR STUDENTS',
     title: 'Choreography',
-    desc: 'Thematic production design, classical composition, stagecraft, and lighting rooted in authentic movement vocabulary.',
+    desc: 'Thematic production design, classical composition, stagecraft, and lighting rooted in movement vocabulary.',
     details: 'Composition · Stagecraft · Production design',
   },
   {
     level: 'ALL AGES',
-    title: 'Fine Arts Studio Mentorship',
-    desc: 'Personalized mentorship in traditional fine arts, temple aesthetics, and creative studio practice complementing classical dance.',
-    details: 'Individual mentorship · Studio practice · Heritage workshops',
+    title: 'Mentorship',
+    desc: "Wholistic guided mentorship in training, performance and teacher's training involving every aspect of the art.",
+    details: "Wholistic mentorship · Performance guidance · Teacher's training",
   },
 ]
 
@@ -231,7 +231,7 @@ export default function CoursesSection({ onOpenEnquire }: CoursesSectionProps) {
                   maxWidth: '780px',
                   margin: '0 auto 32px',
                 }}>
-                  Comprehensive training in the Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. The curriculum spans foundational adavus, the progression from alarippu to a full margam, abhinaya and nattuvangam, with an emphasis on understanding the origins, intent and expressive depth of the form. Students are taught to look go deep into the technique behind every movement, explore the nuances of abhinaya and grow into thoughtful, well-rounded dancers.
+                  Comprehensive training in the Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. The curriculum spans foundational adavus, the progression from alarippu to a full margam, abhinaya and nattuvangam, with an emphasis on understanding the origins, intent and expressive depth of the form. Students are taught to delve deep into the technique behind every movement, explore the nuances of abhinaya and grow into thoughtful, well-rounded dancers.
                 </p>
 
                 {/* Highlights Strip */}

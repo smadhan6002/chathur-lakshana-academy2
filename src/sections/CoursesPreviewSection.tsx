@@ -7,26 +7,26 @@ interface CoursesPreviewSectionProps {
 
 const previewCourses = [
   {
-    title: 'Classical Bharatanatyam Training',
+    title: 'Bharatanatyam',
     badge: 'MYLAPORE STUDIO & ONLINE',
     level: 'Foundational → Arangetram',
-    desc: 'Comprehensive training in the Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. The curriculum spans foundational adavus, the progression from alarippu to a full margam, abhinaya and nattuvangam, with an emphasis on understanding the origins, intent and expressive depth of the form. Students are taught to look go deep into the technique behind every movement, explore the nuances of abhinaya and grow into thoughtful, well-rounded dancers.',
+    desc: 'Comprehensive training in the Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. The curriculum spans foundational adavus, the progression from alarippu to a full margam, abhinaya and nattuvangam, with an emphasis on understanding the origins, intent and expressive depth of the form. Students are taught to delve deep into the technique behind every movement, explore the nuances of abhinaya and grow into thoughtful, well-rounded dancers.',
     highlights: ['Weekly Practical & Theory', 'Arangetram Mentorship'],
     featured: true,
   },
   {
     title: 'Nattuvangam',
-    badge: 'RHYTHM & CONDUCTING',
+    badge: 'RHYTHM',
     level: 'Intermediate → Advanced',
     desc: 'Structured training in cymbals (tattukazhi & nattuvangam), sollukattu recitation, tala discipline, and concert accompaniment for classical Bharatanatyam recitals.',
-    highlights: ['Sollukattu Mastery', 'Tala Precision', 'Recital Conducting'],
+    highlights: ['Sollukattu Mastery', 'Tala Precision', 'Recital Accompaniment'],
   },
   {
     title: 'Dance Theory',
-    badge: 'CLASSICAL TREATISES',
+    badge: 'THEORY',
     level: 'All Levels',
-    desc: 'Scholarly study of Natya Shastra, Abhinaya Darpana, tala systems, Sanskrit and Tamil sahityam, and the philosophical foundations of Bharatanatyam.',
-    highlights: ['Natya Shastra', 'Abhinaya Darpana', 'Aesthetic Inquiry'],
+    desc: 'Scholarly study of Natya Shastra, Abhinaya Darpana, and the philosophical foundations of Bharatanatyam.',
+    highlights: ['Natya Shastra', 'Abhinaya Darpana', 'Philosophical Foundations'],
   },
   {
     title: 'Choreography',
@@ -36,11 +36,11 @@ const previewCourses = [
     highlights: ['Thematic Composition', 'Stagecraft', 'Production Design'],
   },
   {
-    title: 'Fine Arts Studio Mentorship',
-    badge: 'MENTORSHIP & VISUAL ARTS',
+    title: 'Mentorship',
+    badge: 'MENTORSHIP',
     level: 'All Age Groups',
-    desc: 'Guided mentorship in traditional fine arts, temple aesthetics, and visual companions that enrich artistic sensibility alongside classical dance.',
-    highlights: ['Individual Guidance', 'Studio Practice', 'Heritage Workshops'],
+    desc: "Wholistic guided mentorship in training, performance and teacher's training involving every aspect of the art.",
+    highlights: ['Guided Mentorship', 'Performance Training', "Teacher's Training"],
   },
 ]
 
@@ -166,7 +166,7 @@ export default function CoursesPreviewSection({
                   lineHeight: 1.15,
                 }}
               >
-                Classical Bharatanatyam Training
+                Bharatanatyam
               </h3>
 
               <p
@@ -178,7 +178,7 @@ export default function CoursesPreviewSection({
                   marginBottom: '22px',
                 }}
               >
-                Comprehensive training in the Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. The curriculum spans foundational adavus, the progression from alarippu to a full margam, abhinaya and nattuvangam, with an emphasis on understanding the origins, intent and expressive depth of the form. Students are taught to look go deep into the technique behind every movement, explore the nuances of abhinaya and grow into thoughtful, well-rounded dancers.
+                Comprehensive training in the Kalakshetra tradition under the guidance of Smt. Dr. Radhika Vairavelavan. The curriculum spans foundational adavus, the progression from alarippu to a full margam, abhinaya and nattuvangam, with an emphasis on understanding the origins, intent and expressive depth of the form. Students are taught to delve deep into the technique behind every movement, explore the nuances of abhinaya and grow into thoughtful, well-rounded dancers.
               </p>
 
               <div
@@ -210,7 +210,7 @@ export default function CoursesPreviewSection({
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
                   type="button"
-                  onClick={() => onOpenEnquire('Classical Bharatanatyam Training')}
+                  onClick={() => onOpenEnquire('Bharatanatyam')}
                   className="btn-primary"
                   style={{ padding: '14px 36px', fontSize: '13px', cursor: 'pointer' }}
                 >
@@ -245,7 +245,7 @@ export default function CoursesPreviewSection({
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '13.5px', fontFamily: 'var(--font-body)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                 <div>
                   <strong style={{ color: 'var(--text-primary)', display: 'block' }}>Batches:</strong>
-                  Children (Ages 5+), Teens, and Adult Beginners
+                  Beginners, Young Adults and Adults
                 </div>
                 <div>
                   <strong style={{ color: 'var(--accent-gold)', display: 'block' }}>Master Classes:</strong>

@@ -383,11 +383,11 @@ export default function ContactSection({ onOpenEnquiry }: ContactSectionProps) {
                 marginBottom: '24px',
               }}>
                 {[
-                  'Classical Bharatanatyam Training',
+                  'Bharatanatyam',
                   'Nattuvangam',
                   'Dance Theory',
                   'Choreography',
-                  'Fine Arts Studio Mentorship',
+                  'Mentorship',
                 ].map((offering) => (
                   <span
                     key={offering}

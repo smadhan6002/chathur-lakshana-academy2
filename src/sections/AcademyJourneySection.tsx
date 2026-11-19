@@ -60,7 +60,7 @@ const academyMilestones = [
     title: 'Continued Artistic & Educational Development',
     icon: Compass,
     category: 'CONTINUING GROWTH',
-    desc: 'Today, Chathur Lakshana continues to grow through both in-person training in Mylapore, Chennai and live interactive online sessions — guiding children, young adults, and adult learners across Classical Bharatanatyam Training, Nattuvangam, Dance Theory, Choreography, and Fine Arts Studio Mentorship.',
+    desc: 'Today, Chathur Lakshana continues to grow through both in-person training in Mylapore, Chennai and live interactive online sessions — guiding children, young adults, and adult learners across Bharatanatyam, Nattuvangam, Dance Theory, Choreography, and Mentorship.',
   },
 ]
 
